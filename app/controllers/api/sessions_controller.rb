@@ -13,6 +13,8 @@ class Api::SessionsController < ApplicationController
     end
 
     def destroy
+        raise '404 user not found' unless logged_in?
         logout
+        render json: ['You have been logged out']
     end
 end
