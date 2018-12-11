@@ -19,13 +19,11 @@ const receiveErrors = (errors) => ({
 })
 
 export const createUser = (user) => dispatch => SessionAPIUtil.createUser(user)
-    .then(user => dispatch(receiveCurrentUser(user)))
-    .catch(errors => dispatch(receiveErrors(errors)));
+    .then(user => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err)));
 
 export const login = (user) => dispatch => SessionAPIUtil.createSession(user)
-    .then(user => dispatch(receiveCurrentUser(user)))
-    .catch(errors => dispatch(receiveErrors(errors)));
+    .then(user => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err)));
+    
 
 export const logout = () => dispatch => SessionAPIUtil.deleteSession()
-    .then(() => dispatch(logoutCurrentUser()))
-    .catch(errors => dispatch(receiveErrors(errors)));
+    .then(() => dispatch(logoutCurrentUser()), err => dispatch(receiveErrors(err)));
