@@ -144,7 +144,7 @@
  }
 
  .splash-logo {
-   background-image: url(splash-logo.png);
+   background: image-url('splash-logo.png');
    background-size: cover;
    width: 150px;
    padding: 10px 15px;
@@ -286,7 +286,7 @@
  }
 
  .navbar-logo {
-   background-image: url(navbar-logo.png);
+   background: image-url('navbar-logo.png');
    background-size: cover;
  }
 
