@@ -5,7 +5,7 @@ import { createUser } from '../../actions/session';
 
 const mapStateToProps = state => ({
   errors: state.errors.session.responseJSON,
-  formType: 'Signup'
+  formType: 'Create account'
 });
 
 const mapDispatchToProps = dispatch => ({

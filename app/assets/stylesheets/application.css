@@ -14,6 +14,226 @@
  *= require_self
  */
 
- body {
-     font-family: Arial, Helvetica, sans-serif;
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ u,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ input,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ canvas,
+ details,
+ embed,
+ figure,
+ figcaption,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ output,
+ ruby,
+ section,
+ summary,
+ time,
+ mark,
+ audio,
+ video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
  }
+
+ body {
+   font-family: 'Overpass', sans-serif;
+   margin-top: 0;
+ }
+
+ h1 {
+   font-size: 30px;
+ }
+
+ a {
+   color: #3288DD;
+   text-decoration: none;
+ }
+
+ /* SPLASH STYLING */
+
+ .container {
+   width: 1240px;
+   margin: 0 auto;
+ }
+
+ .splash {
+   min-width: 940px;
+ }
+
+ .hero {
+     background-image: url('https://a-v2.sndcdn.com/assets/images/home/hp_image@2x-ae2160d.jpg');
+     background-size: contain;
+     height: 450px;
+     border-top: 4px solid #FF5500;
+     position: relative;
+ }
+
+ .splash-logo {
+   background-image: url(splash-logo.png);
+   background-size: cover;
+   width: 150px;
+   padding: 10px 15px;
+   position: absolute;
+   top: 30px;
+   left: 30px;
+ }
+
+ .splash-actions {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   position: absolute;
+   top: 30px;
+   right: 30px;
+ }
+
+ .splash-actions button {
+   padding: 8px 15px;
+   margin: 0 5px;
+   border-radius: 5px;
+   font-size: 13px;
+   font-weight: 100;
+   cursor: pointer;
+ }
+
+  .splash-actions button:focus {
+    outline: none;
+  }
+
+ .splash-actions button.sign-in {
+   border: 1px solid rgba(255, 255, 255, .8);
+   color: white;
+   background-color: transparent;
+ }
+
+ .splash-actions button.sign-in:hover {
+   border: 1px solid white;
+ }
+
+ .splash-actions button.create-account {
+   color: white;
+   background-color: #FF5500;
+   border: none;
+ }
+
+ /* SESSION STYLING */
+
+ .session-form-container {
+   width: 420px;
+   padding: 80px 0;
+   position: relative;
+
+ }
+
+ .session-form-container p {
+   font-size: 12px;
+   color: gray;
+   margin: 20px 0;
+ }
+
+ .session-form-container button {
+   width: 400px;
+   background-color: #FF5500;
+   color: white;
+   padding: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   margin: 10px auto;
+   border-radius: 5px;
+ }
+
+ .session-form-container input {
+    width: 400px;
+    font-size: 18px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+ }
+
+ .session-form-errors {
+   list-style: none;
+   font-size: 12px;
+   color: #FF5500;
+ }
+
+/* 
+ .session-form-logo {
+   background-image: url(session-form-logo.png);
+   background-size: cover;
+   width: 50%;
+   position: absolute;
+   top: 0;
+   left: 0;
+ } */
