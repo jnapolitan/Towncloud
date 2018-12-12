@@ -56,13 +56,16 @@ export default class SessionForm extends React.Component {
   }
 
   render () {
+    const demoUser = {
+      username: 'demo',
+      password: 'demo123'
+    };
+
     let errors;
     if (this.props.errors) {
       errors = this.props.errors.map((err, idx) => (<li key={idx}>{err}</li>))
     }
 
-
-    
     return (
         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={customStyles} contentLabel="Session Form Modal">
           <div className="session-form-container">
@@ -84,6 +87,7 @@ export default class SessionForm extends React.Component {
               &nbsp;<a href="https://www.google.com/search?safe=off&tbm=isch&source=hp&biw=1760&bih=1066&ei=-FwRXJv2AoHH_wScjr6YBA&q=puppies&oq=puppies&gs_l=img.3..35i39j0l9.787.1439..1523...0.0..1.59.368.7......1....1..gws-wiz-img.....0.nYpm3VCEIkQ" target="_blank">
                   Privacy Policy</a>.
               </p>
+              <button className="demo-login-btn" onClick={() => this.props.demoLogin(demoUser)}>Demo</button>
             </form>
           </div>
         </Modal>

@@ -110,7 +110,7 @@
  }
 
  h1 {
-   font-size: 30px;
+   font-size: 34px;
  }
 
  a {
@@ -121,12 +121,12 @@
  /* SPLASH STYLING */
 
  .container {
-   width: 1240px;
-   margin: 0 auto;
+   width: 100%
  }
 
  .splash {
-   min-width: 940px;
+   width: 1240px;
+   margin: 0 auto;
  }
 
  .hero {
@@ -135,6 +135,12 @@
      height: 450px;
      border-top: 4px solid #FF5500;
      position: relative;
+ }
+
+ .hero-text {
+   color: white;
+   text-align: center;
+   margin-top: 170px; 
  }
 
  .splash-logo {
@@ -184,6 +190,7 @@
    background-color: #FF5500;
    border: none;
  }
+
 
  /* SESSION STYLING */
 
@@ -237,3 +244,87 @@
    top: 0;
    left: 0;
  } */
+
+ /* NAV STYLING */
+
+ .navbar {
+   width: 100%;
+   position: fixed;
+   height: 50px;
+   background-color: #333333;
+   color: lightgray;
+ }
+
+ .navbar-content {
+   width: 1240px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .navbar-left {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 30%;
+   list-style: none;
+ }
+
+ .navbar-left li {
+   width: 100%;
+   padding: 12px 0;
+   border-right: 1px solid black;
+   text-align: center;
+ }
+
+ .navbar-left li a {
+   color: lightgray;
+ }
+
+ .navbar-left li a:hover {
+   color: white;
+ }
+
+ .navbar-logo {
+   background-image: url(navbar-logo.png);
+   background-size: cover;
+ }
+
+ .navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+    list-style: none;
+ }
+
+ .navbar-right li button {
+    background: transparent;
+    color: lightgray;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 20px;
+ }
+
+ .navbar-right li button:hover {
+   color: white;
+ }
+
+  .navbar-right li button.user {
+    font-weight: bold;
+    color: #FF5500;
+  }
+
+  .navbar-search {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .navbar-search input {
+     width: 100%;
+      padding: 2px 5px;
+      border-radius: 5px;

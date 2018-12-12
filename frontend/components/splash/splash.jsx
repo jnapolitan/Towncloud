@@ -11,12 +11,16 @@ export default class Splash extends React.Component {
         <div className="hero">
           <div className="splash-logo" />
           <div className="splash-actions">
-            <Link to="/login">
+            <Link to="/splash/login">
               <button className="sign-in">Sign in</button>
             </Link>
-            <Link to="/signup">
+            <Link to="/splash/signup">
               <button className="create-account">Create account</button>
             </Link>
+          </div>
+          <div className="hero-text">
+            <h1>Discover more local artists with TownCloud</h1>
+            <p>TownCloud lets you discover and connect with artists from your local community.</p>
           </div>
         </div>
       </div>;
