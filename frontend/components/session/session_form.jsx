@@ -12,20 +12,22 @@ const customStyles = {
   }
 };
 
-Modal.setAppElement(document.getElementById('root'));
-
 export default class SessionForm extends React.Component {
   constructor(props) {
-  super(props);
-  this.state = {
-    username: '',
-    password: '',
-    modalIsOpen: true
-  };
-  this.handleSubmit = this.handleSubmit.bind(this);
-  this.openModal = this.openModal.bind(this);
-  this.afterOpenModal = this.afterOpenModal.bind(this);
-  this.closeModal = this.closeModal.bind(this);
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+      modalIsOpen: true
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement(document.getElementById("root"));
   }
 
   update(field) {
@@ -36,7 +38,7 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state)
+    this.props.action(this.state);
   }
 
   openModal() {
@@ -48,6 +50,7 @@ export default class SessionForm extends React.Component {
   }
 
   closeModal() {
+    this.props.clearErrors();
     this.setState({ modalIsOpen: false });
     this.props.history.push('/');
   }
@@ -60,7 +63,7 @@ export default class SessionForm extends React.Component {
 
 
     
-    return <div>
+    return (
         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={customStyles} contentLabel="Session Form Modal">
           <div className="session-form-container">
             {/* <div className="session-form-logo"></div> */}
@@ -84,6 +87,6 @@ export default class SessionForm extends React.Component {
             </form>
           </div>
         </Modal>
-      </div>;
+      )
   }
 }
