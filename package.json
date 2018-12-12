@@ -1,5 +1,5 @@
 {
-  "name": "Towncloud",
+  "name": "TownCloud",
   "private": true,
   "version": "1.0.0",
   "main": "towncloud.jsx",
@@ -7,13 +7,18 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "11.2.0",
+    "npm": "6.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jnapolitan/Towncloud"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "Julian Napolitan",
