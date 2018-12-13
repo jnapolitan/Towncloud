@@ -124,11 +124,23 @@
  .container {
    width: 100%;
    position: relative;
+   height: 100vh; // for white background demo
  }
+
+ .background-white {
+   background-color: white; // for white background demo
+ }
+
+  .main { // for white background demo
+    width: 1240px;
+    margin: 0 auto;
+    height: 100vh;
+  }
 
  .splash {
    width: 1240px;
    margin: 0 auto;
+   height: 100%;
  }
 
  .hero {
@@ -343,24 +355,27 @@
    list-style: none;
  }
 
- .navbar-left li {
+ .navbar-left a.text {
    width: 100%;
    padding: 12px 0;
    border-right: 1px solid black;
    text-align: center;
  }
 
- .navbar-left li a {
+ .navbar-left a {
    color: lightgray;
  }
 
- .navbar-left li a:hover {
+ .navbar-left a:hover {
    color: white;
  }
 
  .navbar-logo {
    background: image-url('navbar-logo.png');
    background-size: cover;
+   width: 90px;
+   height: 100%;
+   border-right: 1px solid black;
  }
 
  .navbar-right {
@@ -402,3 +417,5 @@
       padding: 2px 5px;
       border-radius: 5px;
    }
+
+ 

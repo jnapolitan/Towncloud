@@ -5,10 +5,10 @@ const Navbar = props => {
     return <div className="navbar">
         <div className="navbar-content">
           <ul className="navbar-left">
-            <li className="navbar-logo" />
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Stream</a></li>
-            <li><a href="/">Collection</a></li>
+            <a href="/"><li className="navbar-logo" /></a>
+            <a href="/" className="text"><li>Home</li></a>
+            <a href="/" className="text"><li>Stream</li></a>
+            <a href="/" className="text"><li>Collection</li></a>
           </ul>
           <div className="navbar-search">
             <input type="text" placeholder="Search" />
@@ -19,6 +19,7 @@ const Navbar = props => {
             <li><button className="user">{props.currentUser.username}</button></li>
           </ul>
         </div>
+        <div className="main background-white" />
       </div>
   }
 

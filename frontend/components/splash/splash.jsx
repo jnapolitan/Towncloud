@@ -60,9 +60,9 @@ export default class Splash extends React.Component {
   
   render () {
 
-    return <div className="splash">
+    return <div className="splash background-white">
         <div className="hero">
-          <div className="splash-logo" />
+          <a href="/"><div className="splash-logo" /></a>
           <div className="splash-actions">
             <button id="log-in-modal-btn" className="sign-in">Sign in</button>
             <button id="sign-up-modal-btn" className="create-account">Create account</button>
