@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Splash from './splash';
-import { clearErrors } from '../../actions/session';
+import { clearSessionErrors } from '../../actions/session';
 
 const mapDispatchToProps = dispatch => ({
-  clearErrors: () => dispatch(clearErrors())
+  clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 export default connect(

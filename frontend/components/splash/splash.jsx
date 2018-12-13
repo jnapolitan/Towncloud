@@ -5,7 +5,7 @@ import SignupFormContainer from "../session/signup_form_container";
 export default class Splash extends React.Component {
   constructor(props) {
     super(props);
-    this.clearErrors = props.clearErrors;
+    this.clearSessionErrors = props.clearSessionErrors;
   }
 
   logInModal() {
@@ -20,13 +20,13 @@ export default class Splash extends React.Component {
 
     closeLogIn.onclick = () => {
       logInModal.style.display = "none";
-      this.clearErrors();
+      this.clearSessionErrors();
     };
 
     window.addEventListener('click', (e) => {
       if (e.target == logInModal) {
         logInModal.style.display = "none";
-        this.clearErrors();
+        this.clearSessionErrors();
       }
     });
   }
@@ -42,13 +42,13 @@ export default class Splash extends React.Component {
 
     closeSignUp.onclick = () => {
       signUpModal.style.display = "none";
-      this.clearErrors();
+      this.clearSessionErrors();
     };
 
     window.addEventListener('click', (e) => {
       if (e.target == signUpModal) {
         signUpModal.style.display = "none";
-        this.clearErrors();
+        this.clearSessionErrors();
       }
     });
   }

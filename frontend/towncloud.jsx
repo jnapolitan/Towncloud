@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import configureStore from './store/store'
+import * as SongAction from './actions/songs'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,5 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
+
+    // TESTING 
+
+    window.store = store.getState();
+    window.dispatch = store.dispatch;
+    window.fetchAllSongs = SongAction.fetchAllSongs;
+    window.fetchSong = SongAction.fetchSong;
+    window.createSong = SongAction.createSong;
+    window.updateSong = SongAction.updateSong;
+    window.deleteSong = SongAction.deleteSong;
+
+    //
+
     ReactDOM.render(<App store={store} />, root)
 });
