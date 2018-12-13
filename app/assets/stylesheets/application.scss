@@ -107,6 +107,7 @@
  body {
    font-family: 'Overpass', sans-serif;
    margin-top: 0;
+   background-color: #F2F2F2;
  }
 
  h1 {
@@ -121,7 +122,7 @@
  /* SPLASH STYLING */
 
  .container {
-   width: 100%
+   width: 100%;
  }
 
  .splash {
@@ -198,7 +199,9 @@
    width: 420px;
    padding: 80px 0;
    position: relative;
-
+   display: flex;
+   flex-direction: column;
+   align-items: center;
  }
 
  .session-form-container p {
@@ -207,8 +210,14 @@
    margin: 20px 0;
  }
 
+ .session-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
  .session-form-container button {
-   width: 400px;
+   width: 100%;
    background-color: #FF5500;
    color: white;
    padding: 10px;
@@ -218,8 +227,15 @@
    border-radius: 5px;
  }
 
+ .session-form-container button.demo-login-btn {
+   width: 100%;
+   padding: 5px;
+   margin: 5px;
+   font-size: 12px;
+ }
+
  .session-form-container input {
-    width: 400px;
+    width: 100%;
     font-size: 18px;
     margin: 10px auto;
     border-radius: 5px;
@@ -234,16 +250,6 @@
    font-size: 12px;
    color: #FF5500;
  }
-
-/* 
- .session-form-logo {
-   background-image: url(session-form-logo.png);
-   background-size: cover;
-   width: 50%;
-   position: absolute;
-   top: 0;
-   left: 0;
- } */
 
  /* NAV STYLING */
 
