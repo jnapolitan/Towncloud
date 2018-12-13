@@ -119,10 +119,11 @@
    text-decoration: none;
  }
 
- /* SPLASH STYLING */
+ /* SPLASH */
 
  .container {
    width: 100%;
+   position: relative;
  }
 
  .splash {
@@ -192,16 +193,82 @@
    border: none;
  }
 
+ /* MODAL */
 
- /* SESSION STYLING */
+ .modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(250,250,250); 
+  background-color: rgba(250,250,250,0.4); 
+  -webkit-animation: fadeIn 0.4s;
+  animation: fadeIn 0.4s
+}
+
+.modal-content {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% auto; 
+  -webkit-animation: animateTop 0.4s;
+  animation: animateTop 0.4s
+}
+
+.close {
+  color: #111;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animateTop {
+  from {margin-top: -200%}
+  to {margin-top: 0}
+}
+
+@-webkit-keyframes animateTop {
+  from {margin-top: -200%}
+  to {margin-top: 0}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+ /* SESSION */
 
  .session-form-container {
-   width: 420px;
-   padding: 80px 0;
+   max-width: 420px;
+   padding: 80px 20px;
    position: relative;
+   border-radius: 5px;
    display: flex;
    flex-direction: column;
    align-items: center;
+   background-color: white;
  }
 
  .session-form-container p {
@@ -230,7 +297,7 @@
  .session-form-container button.demo-login-btn {
    width: 100%;
    padding: 5px;
-   margin: 5px;
+   margin: 5px 0;
    font-size: 12px;
  }
 
@@ -251,7 +318,7 @@
    color: #FF5500;
  }
 
- /* NAV STYLING */
+ /* NAV */
 
  .navbar {
    width: 100%;
