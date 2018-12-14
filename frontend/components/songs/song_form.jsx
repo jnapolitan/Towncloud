@@ -6,9 +6,12 @@ class SongForm extends React.Component {
         super(props);
         this.state = {
             song: this.props.song,
-            imageFile: null
+            imageFile: null,
+            audioFile: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleImageFile = this.handleImageFile.bind(this);
+        this.handleAudioFile = this.handleAudioFile.bind(this);
     }
 
     update(field) {
@@ -25,11 +28,16 @@ class SongForm extends React.Component {
         formData.append('song[genre]', genre);
         formData.append('song[description]', description);
         formData.append('song[image]', this.state.imageFile);
+        formData.append('song[audio]', this.state.audioFile);
         this.props.action(formData);
     }
 
-    handleFile(e) {
+    handleImageFile(e) {
         this.setState({imageFile: e.currentTarget.files[0]});
+    }
+
+    handleAudioFile(e) {
+        this.setState({audioFile: e.currentTarget.files[0] });
     }
 
     render() {
@@ -55,7 +63,8 @@ class SongForm extends React.Component {
                 Description
                 <textarea value={this.state.description} onChange={this.update("description")} />
               </label>
-              <input type="file" onChange={this.handleFile.bind(this)} />
+              Add image: <input type="file" onChange={this.handleImageFile} />
+                Add audio file:<input type="file" onChange={this.handleAudioFile} />
               <input type="submit" value={this.props.formType} />
             </form>
           </div>;
