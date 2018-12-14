@@ -2,7 +2,7 @@ import {
     RECEIVE_ALL_SONGS,
     RECEIVE_SONG,
     REMOVE_SONG
-} from '../actions/songs';
+} from '../actions/song_actions';
 
 export default (state = {}, action) => {
     Object.freeze(state);

@@ -12,11 +12,13 @@ export const fetchSong = (id) => (
     })
 );
 
-export const createSong = (song) => (
+export const createSong = (songData) => (
     $.ajax({
         method: 'POST',
         url: 'api/songs',
-        data: { song }
+        data: songData,
+        contentType: false,
+        processData: false
     })
 );
 

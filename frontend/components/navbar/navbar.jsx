@@ -19,7 +19,6 @@ const Navbar = props => {
             <li><button className="user">{props.currentUser.username}</button></li>
           </ul>
         </div>
-        <div className="main background-white" />
       </div>
   }
 

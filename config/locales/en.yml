@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      song:
+        image: "Song image"
+        audio: "Audio file"
+    errors:
+      models:
+        song:
+          attributes:
+            image:
+              blank: "is required"
+            audio:
+              blank: "is required"

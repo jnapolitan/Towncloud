@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import configureStore from './store/store'
-import * as SongAction from './actions/songs'
+import configureStore from './store/store';
+import * as SongAction from './actions/song_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -125,6 +125,7 @@
    width: 100%;
    position: relative;
    height: 100vh; // for white background demo
+  //  padding-top: 50px;
  }
 
  .background-white {
@@ -338,6 +339,7 @@
    height: 50px;
    background-color: #333333;
    color: lightgray;
+  //  display: none;
  }
 
  .navbar-content {
@@ -416,6 +418,14 @@
      width: 100%;
       padding: 2px 5px;
       border-radius: 5px;
+   }
+
+   // SONG FORM
+
+   .song-form-container {
+     padding-top: 150px;
+     margin: 0 auto;
+     width: 1240px;
    }
 
  

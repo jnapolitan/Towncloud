@@ -2,7 +2,7 @@ import {
     RECEIVE_SONG_ERRORS,
     RECEIVE_SONG,
     CLEAR_SONG_ERRORS,
-} from '../actions/songs';
+} from '../actions/song_actions';
 
 export default (state = [], action) => {
     Object.freeze(state);
