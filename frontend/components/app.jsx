@@ -4,7 +4,7 @@ import SplashContainer from "./splash/splash_container";
 import NewSongFormContainer from './songs/new_song_form_container';
 import EditSongFormContainer from './songs/edit_song_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch, HashRouter, Redirect } from 'react-router-dom';
+import { Switch, HashRouter, Redirect, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 const App = ({ store }) => (
@@ -14,6 +14,7 @@ const App = ({ store }) => (
         <div>
           <Switch>
             <AuthRoute exact path="/splash" component={SplashContainer} />
+            <Route path="/songs/:songId/edit" component={EditSongFormContainer} />
             <ProtectedRoute path="/" component={NavbarContainer} />
             <Redirect to="/" />
           </Switch>

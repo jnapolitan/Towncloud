@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = props => {
     return <div className="navbar">
@@ -14,7 +14,7 @@ const Navbar = props => {
             <input type="text" placeholder="Search" />
           </div>
           <ul className="navbar-right">
-            <li><button>Upload</button></li>
+            <li><Link to="/upload"><button>Upload</button></Link></li>
             <li><button onClick={props.logout}>Logout</button></li>
             <li><button className="user">{props.currentUser.username}</button></li>
           </ul>
