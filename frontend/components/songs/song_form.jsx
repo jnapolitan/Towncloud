@@ -4,12 +4,7 @@ import { withRouter } from 'react-router-dom';
 class SongForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            song: this.props.song,
-            imageFile: null,
-            imageUrl: null,
-            audioFile: null
-        };
+        this.state = this.props.song;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleImageFile = this.handleImageFile.bind(this);
         this.handleAudioFile = this.handleAudioFile.bind(this);
@@ -17,19 +12,19 @@ class SongForm extends React.Component {
 
     update(field) {
         return e => {
-            this.setState({song: {[field]: e.target.value}});
+            this.setState({[field]: e.target.value});
         };
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const { title, genre, description } = this.state.song;
+        const { title, genre, description, imageFile, audioFile } = this.state;
         const formData = new FormData();
         formData.append('song[title]', title);
         formData.append('song[genre]', genre);
         formData.append('song[description]', description);
-        formData.append('song[image]', this.state.imageFile);
-        formData.append('song[audio]', this.state.audioFile);
+        formData.append('song[image]', imageFile);
+        formData.append('song[audio]', audioFile);
         this.props.action(formData);
     }
 
@@ -62,7 +57,7 @@ class SongForm extends React.Component {
                   <option value="Julianwave">Julianwave</option>
                   <option value="Jazz">Jazz</option>
                   <option value="Hip Hop">Hip Hop</option>
-                  <option value="Rock">Julianwave</option>
+                  <option value="Rock">Rock</option>
                   <option value="Electronic">Electronic</option>
                 </select>
               </label>

@@ -6,7 +6,10 @@ const mapStateToProps = state => ({
     song: { 
         title: '',
         genre: 'Julianwave',
-        description: ''
+        description: '',
+        imageFile: null,
+        imageUrl: null,
+        audioFile: null
     },
     formType: 'Upload Song'
 });

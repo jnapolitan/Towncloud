@@ -14,11 +14,13 @@ const App = ({ store }) => (
         <div>
           <Switch>
             <AuthRoute exact path="/splash" component={SplashContainer} />
-            <Route path="/songs/:songId/edit" component={EditSongFormContainer} />
             <ProtectedRoute path="/" component={NavbarContainer} />
             <Redirect to="/" />
           </Switch>
-          <ProtectedRoute path="/upload" component={NewSongFormContainer} />
+          <Switch>
+            <ProtectedRoute path="/upload" component={NewSongFormContainer} />
+            <ProtectedRoute path="/songs/:songId/edit" component={EditSongFormContainer} />
+          </Switch>
         </div>
       </HashRouter>
     </Provider>

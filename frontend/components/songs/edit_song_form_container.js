@@ -4,7 +4,6 @@ import SongForm from './song_form';
 import { fetchSong, updateSong } from '../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
     song: state.entities.songs[ownProps.match.params.songId],
     formType: 'Edit Song'

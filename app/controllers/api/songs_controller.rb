@@ -9,12 +9,15 @@ class Api::SongsController < ApplicationController
     end
     
     def create
-        @song = current_user.songs.new(song_params)
-
-        if @song.save
-            render :show
+        if media_missing?
+            render json: ["Both image and audio must be included"], status: 401
         else
-            render json: @song.errors.full_messages, status: 401
+            @song = current_user.songs.new(song_params)
+            if @song.save
+                render :show
+            else
+                render json: @song.errors.full_messages, status: 401
+            end
         end
     end
 
@@ -38,12 +41,19 @@ class Api::SongsController < ApplicationController
 
     def song_params
         params.require(:song).permit(
-            :user_id, 
             :title, 
             :genre, 
             :description, 
             :image, 
             :audio
         )
+    end
+
+    def media_missing?
+        if song_params[:image] == "null" ||
+            song_params[:audio] == "null"
+            return true
+        end
+        false
     end
 end
