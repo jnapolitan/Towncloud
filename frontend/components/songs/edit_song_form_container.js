@@ -5,18 +5,19 @@ import { fetchSong, updateSong } from '../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-    song: state.entities.songs[ownProps.match.params.songId],
-    formType: 'Edit Song'
-}};
+        song: state.entities.songs[ownProps.match.params.songId],
+        formType: 'Edit Song'
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
     fetchSong: id => dispatch(fetchSong(id)),
-    action: song => dispatch(updateSong(song))
+    action: (songData, id) => dispatch(updateSong(songData, id))
 });
 
 class EditSongForm extends React.Component {
     componentDidMount() {
-        this.props.fetchSong(this.props.match.params.songId)
+        this.props.fetchSong(this.props.match.params.songId);
     }
 
     componentDidUpdate(prevProps) {
@@ -26,6 +27,9 @@ class EditSongForm extends React.Component {
     }
 
     render() {
+        if (!this.props.song) {
+            return <div>Loading...</div>
+        }
         const { action, formType, song } = this.props;
         return(
             <SongForm 

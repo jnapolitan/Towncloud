@@ -22,16 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // TESTING 
-
     window.store = store.getState();
-    window.dispatch = store.dispatch;
-    window.fetchAllSongs = SongAction.fetchAllSongs;
-    window.fetchSong = SongAction.fetchSong;
-    window.createSong = SongAction.createSong;
-    window.updateSong = SongAction.updateSong;
-    window.deleteSong = SongAction.deleteSong;
-
-    //
 
     ReactDOM.render(<App store={store} />, root)
 });

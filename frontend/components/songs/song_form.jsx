@@ -23,9 +23,9 @@ class SongForm extends React.Component {
         formData.append('song[title]', title);
         formData.append('song[genre]', genre);
         formData.append('song[description]', description);
-        formData.append('song[image]', imageFile);
-        formData.append('song[audio]', audioFile);
-        this.props.action(formData);
+        if (imageFile) formData.append('song[image]', imageFile);
+        if (audioFile) formData.append('song[audio]', audioFile);
+        this.props.action(formData, this.state.id);
     }
 
     handleImageFile(e) {

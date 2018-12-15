@@ -9,7 +9,6 @@ class Song < ApplicationRecord
     belongs_to :user
 
     # def ensure_image
-    #     debugger
     #     unless self.image.attached?
     #         errors[:image] << "must be attached"
     #     end

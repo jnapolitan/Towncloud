@@ -39,8 +39,8 @@ export const fetchSong = (id) => dispatch => SongAPIUtil.fetchSong(id)
 export const createSong = (song) => dispatch => SongAPIUtil.createSong(song)
     .then(song => dispatch(receiveSong(song)), err => dispatch(receiveSongErrors(err)));
 
-export const updateSong = (song) => dispatch => SongAPIUtil.updateSong(song)
+export const updateSong = (song, id) => dispatch => SongAPIUtil.updateSong(song, id)
     .then(song => dispatch(receiveSong(song)), err => dispatch(receiveSongErrors(err)));
 
 export const deleteSong = (id) => dispatch => SongAPIUtil.deleteSong(id)
-    .then(song => dispatch(removeSong(id)), err => dispatch(receiveSongErrors(err)));
+    .then(song => dispatch(removeSong(song.id)), err => dispatch(receiveSongErrors(err)));
