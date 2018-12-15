@@ -114,6 +114,14 @@
    font-size: 34px;
  }
 
+ h2 {
+   font-size: 30px;
+ }
+
+ h3 {
+   font-size: 24px;
+ }
+
  a {
    color: #3288DD;
    text-decoration: none;
@@ -423,17 +431,88 @@
    // SONG FORM
 
    .song-form-container {
-     padding-top: 150px;
+     padding: 75px 25px 25px 25px;
      margin: 0 auto;
      width: 1240px;
+     background-color: white;
+     box-sizing: border-box;
+     display: flex;
+     justify-content: center;
+   }
+
+   .song-form-container h2 {
+     color: #FF5500;
+     border-bottom: 1px solid #FF5500;
    }
 
    .song-form-container form {
      display: flex;
      flex-direction: column;
+     width: 70%;
+     padding: 25px;
+     border: 1px solid lightgray;
+     border-radius: 5px;
+   }
+
+   .song-form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .song-form-columns {
+     display: flex;
+   }
+
+   .song-form-left {
+     width: 30%;
+     padding: 25px;
+   }
+
+   .song-form-right {
+     width: 70%;
+     padding: 25px;
+   }
+
+   .song-form-btn {
+     background-color: #FF5500;
+     color: white;
+     width: 20%;
+     padding: 5px;
    }
 
    .preview {
      max-width: 20%;
      height: auto; 
+   }
+
+   // SONG INDEX
+
+   .song-index-container {
+      background-color: white;
+      padding: 75px 25px 25px 25px;
+      margin: 0 auto;
+      width: 1240px;
+      box-sizing: border-box;
+   }
+
+   .muted-text {
+     color: gray;
+   }
+
+   .song-items-container {
+     padding-top: 25px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+
+   .song-item {
+     width: 20%;
+   }
+
+   .song-img {
+     object-fit: cover;
+     width: 180px;
+     height: 180px;
    }

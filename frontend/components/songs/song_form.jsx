@@ -45,32 +45,40 @@ class SongForm extends React.Component {
     render() {
         const preview = this.state.imageUrl ? <img className="preview" src={this.state.imageUrl} /> : null;
         return <div className="song-form-container">
-            <h3>{this.props.formType}</h3>
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Title
-                <input type="text" value={this.state.title} onChange={this.update("title")} />
-              </label>
-              <label>
-                Genre
-                <select value={this.state.genre} onChange={this.update("genre")}>
-                  <option value="Julianwave">Julianwave</option>
-                  <option value="Jazz">Jazz</option>
-                  <option value="Hip Hop">Hip Hop</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Electronic">Electronic</option>
-                </select>
-              </label>
+            <form className="song-form" onSubmit={this.handleSubmit}>
+              <h2>{this.props.formType}</h2>
+              <div className="song-form-columns">
+                <div className="song-form-left">
+                    <p>Preview:</p>
+                    {preview}
+                    Add image: <input type="file" onChange={this.handleImageFile} />
+                    Add audio file:
+                    <input type="file" onChange={this.handleAudioFile} />
+                </div>
+                <div className="song-form-right">
+                <label>
+                    Title
+                    <input type="text" value={this.state.title} onChange={this.update("title")} />
+                </label>
+                <label>
+                    Genre
+                    <select value={this.state.genre} onChange={this.update("genre")}>
+                    <option value="Julianwave">Julianwave</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Animal Sounds">Animal Sounds</option>
+                    <option value="Electronic">Electronic</option>
+                    </select>
+                </label>
 
-              <label>
-                Description
-                <textarea value={this.state.description} onChange={this.update("description")} />
-              </label>
-                <p>Preview:</p>
-              {preview}
-              Add image: <input type="file" onChange={this.handleImageFile} />
-              Add audio file:<input type="file" onChange={this.handleAudioFile} />
-              <input type="submit" value={this.props.formType} />
+                <label>
+                    Description
+                    <textarea value={this.state.description} onChange={this.update("description")} />
+                </label>
+                </div>
+              </div>
+              <input className="song-form-btn" type="submit" value="Save" />
             </form>
           </div>;
     }

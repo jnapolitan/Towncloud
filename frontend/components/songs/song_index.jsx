@@ -16,10 +16,10 @@ export default class SongIndex extends React.Component {
           return  <SongIndexItem key={song.id} song={song} deleteSong={this.props.deleteSong} />
         });
 
-        return (
-            <ul>
-                {songs}
-            </ul>
-        )
+        return <div className="song-index-container">
+        <h3>More of what you like</h3>
+        <p className="muted-text">Check out the latest sounds from your town</p>
+            <ul className="song-items-container">{songs}</ul>
+          </div>;
     }
 }

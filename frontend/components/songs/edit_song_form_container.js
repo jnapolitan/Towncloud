@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         song: state.entities.songs[ownProps.match.params.songId],
         formType: 'Edit Song'
-    }
+    };
 };
 
 const mapDispatchToProps = dispatch => ({
