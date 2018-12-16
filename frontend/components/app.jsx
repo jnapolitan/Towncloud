@@ -9,6 +9,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, HashRouter, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+
 const App = ({ store }) => (
   <div className="container">
     <Provider store={store}>

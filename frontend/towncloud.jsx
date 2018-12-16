@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import configureStore from './store/store';
-import * as SongAction from './actions/song_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // TESTING 
     window.store = store.getState();
+    window.dispatch = store.dispatch;
+    //
 
     ReactDOM.render(<App store={store} />, root)
 });
