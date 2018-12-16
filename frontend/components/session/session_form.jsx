@@ -46,7 +46,7 @@ export default class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder="Your username" value={this.state.username} onChange={this.update("username")} />
             <input type="password" placeholder="Your password" value={this.state.password} onChange={this.update("password")} />
-            <ul className="session-form-errors">{errors}</ul>
+            <ul className="form-errors">{errors}</ul>
             <button type="submit">Continue</button>
             <p className="form-text">
               We may use your email and devices for updates and tips on

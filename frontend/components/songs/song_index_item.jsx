@@ -1,20 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SongIndexItem = props => {
-    const userActions = () => {
-        return <div>
-            <button onClick={() => deleteSong(song.id)}>Delete</button>
-            <a href={`/#/songs/${song.id}/edit`}>Edit song</a>
-          </div>;
-    }
-    const { song, deleteSong } = props;
+    const { song } = props;
 
     return <div className="song-item">
-        <img className="song-img" src={song.imageUrl} />
-        <p>{song.title}</p>
-        <p>{song.genre}</p>
-        <button onClick={() => deleteSong(song.id)}>Delete</button>
-        <a href={`/#/songs/${song.id}/edit`}>Edit song</a>
+        <Link to={`/songs/${song.id}`}>
+          <img className="song-img" src={song.imageUrl} />
+        </Link>
+        <Link to={`/songs/${song.id}`}>
+          <h4>{song.title}</h4>
+        </Link>
+        <p className="song-item-genre">{song.genre}</p>
       </div>;
 };
 

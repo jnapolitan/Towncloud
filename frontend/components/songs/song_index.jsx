@@ -13,7 +13,7 @@ export default class SongIndex extends React.Component {
         }            
 
         const songs = this.props.songs.map(song => {
-          return  <SongIndexItem key={song.id} song={song} deleteSong={this.props.deleteSong} />
+          return  <SongIndexItem key={song.id} song={song} />
         });
 
         return <div className="song-index-container">

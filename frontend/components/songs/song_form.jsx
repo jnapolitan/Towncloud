@@ -10,6 +10,10 @@ class SongForm extends React.Component {
         this.handleAudioFile = this.handleAudioFile.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearSongErrors();
+    }
+
     update(field) {
         return e => {
             this.setState({[field]: e.target.value});
@@ -43,42 +47,57 @@ class SongForm extends React.Component {
     }
 
     render() {
-        const preview = this.state.imageUrl ? <img className="preview" src={this.state.imageUrl} /> : null;
+        let errors;
+        if (this.props.errors) {
+            errors = this.props.errors.map((err, idx) => (<li key={idx}>{err}</li>))
+        }
         return <div className="song-form-container">
-            <form className="song-form" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <h2>{this.props.formType}</h2>
               <div className="song-form-columns">
                 <div className="song-form-left">
-                    <p>Preview:</p>
-                    {preview}
-                    Add image: <input type="file" onChange={this.handleImageFile} />
-                    Add audio file:
+                    <p>Image preview:</p>
+                    <img className="form-img-preview" src={this.state.imageUrl} />
+                    <p>Image:</p> <input type="file" onChange={this.handleImageFile} />
+                    <p>Audio:</p>
                     <input type="file" onChange={this.handleAudioFile} />
                 </div>
                 <div className="song-form-right">
-                <label>
-                    Title
-                    <input type="text" value={this.state.title} onChange={this.update("title")} />
-                </label>
-                <label>
-                    Genre
-                    <select value={this.state.genre} onChange={this.update("genre")}>
-                    <option value="Julianwave">Julianwave</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Hip Hop">Hip Hop</option>
-                    <option value="Rock">Rock</option>
-                    <option value="Animal Sounds">Animal Sounds</option>
-                    <option value="Electronic">Electronic</option>
-                    </select>
-                </label>
+                    <label>
+                        <p>Title</p>
+                        <input 
+                            className="song-form-input" 
+                            type="text" 
+                            value={this.state.title} 
+                            onChange={this.update("title")} 
+                            placeholder="Name your track"
+                        />
+                    </label>
+                    <label>
+                        <p>Genre</p>
+                        <select className="song-form-select" value={this.state.genre} onChange={this.update("genre")}>
+                        <option value="Julianwave">Julianwave</option>
+                        <option value="Jazz">Jazz</option>
+                        <option value="Hip Hop">Hip Hop</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Animal Sounds">Animal Sounds</option>
+                        <option value="Electronic">Electronic</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Description
-                    <textarea value={this.state.description} onChange={this.update("description")} />
-                </label>
+                    <label>
+                        <p>Description</p>
+                        <textarea 
+                            value={this.state.description} 
+                            onChange={this.update("description")} 
+                            placeholder="Describe your track"
+                            className="song-form-textbox"
+                        />
+                    </label>
+                    <ul className="form-errors">{errors}</ul>
                 </div>
               </div>
-              <input className="song-form-btn" type="submit" value="Save" />
+              <button className="song-form-btn" type="submit">Save</button>
             </form>
           </div>;
     }

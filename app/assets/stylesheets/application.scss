@@ -122,12 +122,17 @@
    font-size: 24px;
  }
 
+ h4 {
+   font-size: 16px;
+   color: black;
+ }
+
  a {
    color: #3288DD;
    text-decoration: none;
  }
 
- button:focus {
+ *:focus {
    outline: none;
  }
 
@@ -333,7 +338,7 @@
     box-sizing: border-box;
  }
 
- .session-form-errors {
+ .form-errors {
    list-style: none;
    font-size: 12px;
    color: #FF5500;
@@ -454,12 +459,6 @@
      border-radius: 5px;
    }
 
-   .song-form {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-   }
-
    .song-form-columns {
      display: flex;
    }
@@ -467,11 +466,18 @@
    .song-form-left {
      width: 30%;
      padding: 25px;
+     overflow: hidden;
+   }
+
+   .song-form-left p {
+      margin: 10px 0 0 0;
    }
 
    .song-form-right {
      width: 70%;
      padding: 25px;
+     display: flex;
+     flex-direction: column;
    }
 
    .song-form-btn {
@@ -479,11 +485,49 @@
      color: white;
      width: 20%;
      padding: 5px;
+     font-size: 16px;
+     margin: 0 auto;
+     cursor: pointer; 
    }
 
-   .preview {
-     max-width: 20%;
-     height: auto; 
+   .form-img-preview {
+     max-width: 100%
+   }
+
+   .song-form-select {
+     width: 50%;
+     height: 30px;
+     background-color: white;
+     margin: 5px auto;
+     border-radius: 5px;
+     border: 1px solid lightgray;
+     box-sizing: border-box;
+   }
+
+   .song-form-input {
+     width: 100%;
+     font-size: 12px;
+     margin: 5px auto;
+     padding: 5px;
+     border-radius: 5px;
+     border: 1px solid lightgray;
+     height: 30px;
+     box-sizing: border-box;
+   }
+
+   .song-form-textbox {
+     width: 100%;
+     height: 200px;
+     font-size: 12px;
+     margin: 5px auto;
+     padding: 5px;
+     border-radius: 5px;
+     border: 1px solid lightgray;
+     box-sizing: border-box;
+   }
+
+   label > p {
+     margin: 10px 0 0 0;
    }
 
    // SONG INDEX
@@ -501,18 +545,45 @@
    }
 
    .song-items-container {
-     padding-top: 25px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      width: 80%;
    }
 
    .song-item {
      width: 20%;
+     margin: 25px 25px 0 0;
    }
 
    .song-img {
      object-fit: cover;
      width: 180px;
      height: 180px;
+     transition: transform .2s;
    }
+
+   .song-img:hover {
+     transform: scale(1.02)
+   }
+
+    .preview {
+      max-width: 20%;
+      height: auto;
+    }
+
+    .song-item-genre {
+      font-size: 12px;
+      color: gray;
+    }
+
+    // SONG SHOW
+    
+   .song-show-container {
+     background-color: white;
+     padding: 75px 25px 25px 25px;
+     margin: 0 auto;
+     width: 1240px;
+     box-sizing: border-box;
+   }
+   

@@ -1,18 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SongForm from './song_form';
-import { fetchSong, updateSong } from '../../actions/song_actions';
+import { fetchSong, updateSong, clearSongErrors } from '../../actions/song_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
         song: state.entities.songs[ownProps.match.params.songId],
-        formType: 'Edit Song'
+        formType: 'Edit Song',
+        errors: state.errors.song.responseJSON
     };
 };
 
 const mapDispatchToProps = dispatch => ({
     fetchSong: id => dispatch(fetchSong(id)),
-    action: (songData, id) => dispatch(updateSong(songData, id))
+    action: (songData, id) => dispatch(updateSong(songData, id)),
+    clearSongErrors: () => dispatch(clearSongErrors())
 });
 
 class EditSongForm extends React.Component {
@@ -36,6 +38,8 @@ class EditSongForm extends React.Component {
                 action={action}
                 formType={formType}
                 song={song}
+                clearSongErrors={this.props.clearSongErrors}
+                errors={this.props.errors}
             />
         );
     }

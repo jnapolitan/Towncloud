@@ -9,16 +9,16 @@ class Api::SongsController < ApplicationController
     end
     
     def create
-        if media_missing?
-            render json: ["Both image and audio must be included"], status: 401
-        else
+        # if media_missing?
+        #     render json: ["Both image and audio must be included"], status: 401
+        # else
             @song = current_user.songs.new(song_params)
             if @song.save
                 render :show
             else
                 render json: @song.errors.full_messages, status: 401
             end
-        end
+        # end
     end
 
     def update
@@ -49,11 +49,11 @@ class Api::SongsController < ApplicationController
         )
     end
 
-    def media_missing?
-        if song_params[:image] == "null" ||
-            song_params[:audio] == "null"
-            return true
-        end
-        false
-    end
+    # def media_missing?
+    #     if song_params[:image] == "undefined" ||
+    #         song_params[:audio] == "undefined"
+    #         return true
+    #     end
+    #     false
+    # end
 end
