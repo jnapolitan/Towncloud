@@ -13,12 +13,18 @@ export default class SongShow extends React.Component {
             return <div className="song-show-container">Loading...</div>;
         }
 
-        return (
-            <div className="song-show-container">
-                <h3>{song.title}</h3>
-                <p>{song.description}</p>
-                <Link to="/songs">Back to all songs</Link>
+        return <div className="song-show-container">
+        <div className="song-show-contents">
+            <div className="song-show-left">
+                <img className="play-button-img" src="https://www.seoclerk.com/pics/446033-13uMBM1476730969.png" />
+                <div>
+                    <h3><span className="song-show-text">{song.title}</span></h3>
+                    <p><span className="song-show-text">{song.genre}</span></p>
+                </div>
             </div>
-        );
+            <div className="waveform-img" />
+            <img className="song-show-img" src={song.imageUrl} />
+          </div>
+        </div>;
     }
 }

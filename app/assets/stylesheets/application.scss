@@ -578,12 +578,59 @@
     }
 
     // SONG SHOW
-    
+
    .song-show-container {
      background-color: white;
-     padding: 75px 25px 25px 25px;
+     padding-top: 50px;
      margin: 0 auto;
      width: 1240px;
      box-sizing: border-box;
+   }
+
+   .song-show-contents {
+     width: 100%;
+     padding: 20px;
+     background-image: linear-gradient(to top right, #FFEBE1, #FF5500);
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     position: relative;
+   }
+
+   .song-show-text {
+     background-color: black;
+     padding: 5px;
+     color: white;
+     display: inline-block;
+     margin-top: 10px;
+   }
+
+   .song-show-img {
+      object-fit: cover;
+      width: 350px;
+      height: 350px;
+   }
+
+   .play-button-img { // FOR DISPLAY
+     height: 100px;
+     width: 100px;
+     float: left;
+     padding-right: 20px;
+   }
+
+   .waveform-img {
+     position: absolute;
+     left: 20px;
+     bottom: 20px;
+     width: 65%;
+     height: 200px;
+     background: image-url('waveform-img.png');
+     background-size: cover;
+   }
+
+   .song-show-left {
+     display: flex;
+     align-items: center;
+     height: 30%;
    }
    
