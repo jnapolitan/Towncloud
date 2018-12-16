@@ -8,7 +8,7 @@ export default class SongShow extends React.Component {
     }
 
     userActions() {
-        const { currentUser, song } = this.props
+        const { currentUser, song } = this.props;
         if (currentUser.id === song.userId) {
             return (
                 <div className="song-options">
@@ -16,7 +16,6 @@ export default class SongShow extends React.Component {
                         <button>Edit Song</button>
                     </Link>
                     <button
-                        className="warn"
                         onClick={() => this.props.deleteSong(song.id)}
                     >Delete Song</button>
                 </div>
@@ -43,6 +42,9 @@ export default class SongShow extends React.Component {
             <img className="song-show-img" src={song.imageUrl} />
           </div>
           {this.userActions()}
+          <div className="song-details">
+                <p className="song-desc">{song.description}</p>
+          </div>
         </div>;
     }
 }
