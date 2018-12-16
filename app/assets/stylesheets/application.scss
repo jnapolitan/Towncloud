@@ -595,6 +595,7 @@
      flex-direction: row;
      justify-content: space-between;
      position: relative;
+     box-sizing: border-box;
    }
 
    .song-show-text {
@@ -628,9 +629,37 @@
      background-size: cover;
    }
 
+   .song-options {
+     background-color: white;
+     width: 100%;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid lightgray;
+   }
+
+   .song-options button {
+     padding: 5px 10px;
+     margin: 5px 0 0 15px;;
+     background-color: white;
+     border: 1px solid lightgray;
+     border-radius: 5px;
+     cursor: pointer;
+     color: gray;
+     font-size: 12px;
+   }
+
+   .song-options button:hover {
+     border: 1px solid gray;
+   }
+
    .song-show-left {
      display: flex;
      align-items: center;
      height: 30%;
+   }
+
+   button.warn:hover {
+     color: red;
    }
    

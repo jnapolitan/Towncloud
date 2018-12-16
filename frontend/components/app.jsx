@@ -21,9 +21,9 @@ const App = ({ store }) => (
           </Switch>
           <Switch>
             <ProtectedRoute path="/upload" component={NewSongFormContainer} />
-            <ProtectedRoute exact path="/songs" component={SongIndexContainer} />
-            <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
             <ProtectedRoute path="/songs/:songId/edit" component={EditSongFormContainer} />
+            <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
+            <ProtectedRoute path="/songs" component={SongIndexContainer} /> 
           </Switch>
         </div>
       </HashRouter>

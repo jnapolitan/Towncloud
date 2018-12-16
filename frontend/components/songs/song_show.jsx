@@ -7,6 +7,23 @@ export default class SongShow extends React.Component {
         this.props.fetchSong(this.props.match.params.songId);
     }
 
+    userActions() {
+        const { currentUser, song } = this.props
+        if (currentUser.id === song.userId) {
+            return (
+                <div className="song-options">
+                    <Link to={`/songs/${song.id}/edit`}>
+                        <button>Edit Song</button>
+                    </Link>
+                    <button
+                        className="warn"
+                        onClick={() => this.props.deleteSong(song.id)}
+                    >Delete Song</button>
+                </div>
+            )
+        }
+    }
+
     render() {
         const { song } = this.props;
         if (!song) {
@@ -25,6 +42,7 @@ export default class SongShow extends React.Component {
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
           </div>
+          {this.userActions()}
         </div>;
     }
 }
