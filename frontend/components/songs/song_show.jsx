@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default class SongShow extends React.Component {
 
     componentDidMount() {
+        this.props.fetchAllUsers();
         this.props.fetchSong(this.props.match.params.songId);
     }
 
@@ -24,8 +25,8 @@ export default class SongShow extends React.Component {
     }
 
     render() {
-        const { song } = this.props;
-        if (!song) {
+        const { song, users } = this.props;
+        if (!song || !users) {
             return <div className="song-show-container">Loading...</div>;
         }
 
@@ -43,6 +44,7 @@ export default class SongShow extends React.Component {
           </div>
           {this.userActions()}
           <div className="song-details">
+          <p>By: {users[song.userId].username}</p>
                 <p className="song-desc">{song.description}</p>
           </div>
         </div>;
