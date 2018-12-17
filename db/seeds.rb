@@ -22,8 +22,8 @@ s3 = Song.new(
     genre: "Electronic", 
     description: "Today is one of the greatest days of my life!! I woke up this morning to see that the album is #1 on Dance and #5 overall!!! This album has been a labor of love that I got to work on with a lot of amazing friends. I’m so happy I finally get to share all the songs with you! Thanks for sticking with me and being my friends. I hope this album brings you happiness and good times because that’s all I ever want for everyone. Thank you for all your support!!! BTW THIS IS MY MOMS FAV SONG OFF MY ALBUM AND IM GLAD IT IS CAUSE ITS ONE OF THE SONGS I HAD THE MOST FUN MAKING ESPECIALLY THE LYRICS :)"
     )
-s3_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/3.png')
-s3_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/3.mp3')
+s3_image = open(Rails.root.join('app', 'assets', 'seeds', '3.png'))
+s3_audio = open(Rails.root.join('app', 'assets', 'seeds', '3.mp3'))
 s3.image.attach(io: s3_image, filename: '3.png')
 s3.audio.attach(io: s3_audio, filename: '3.mp3')
 s3.save!
