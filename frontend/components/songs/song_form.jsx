@@ -29,7 +29,8 @@ class SongForm extends React.Component {
         formData.append('song[description]', description);
         if (imageFile) formData.append('song[image]', imageFile);
         if (audioFile) formData.append('song[audio]', audioFile);
-        this.props.action(formData, this.state.id);
+        this.props.action(formData, this.state.id)
+            .then(res => this.props.history.push(`/songs/${res.song.id}`));
     }
 
     handleImageFile(e) {

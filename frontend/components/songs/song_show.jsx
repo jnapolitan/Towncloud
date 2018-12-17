@@ -8,6 +8,12 @@ export default class SongShow extends React.Component {
         this.props.fetchSong(this.props.match.params.songId);
     }
 
+    componentDidUpdate() {
+        if (this.props.errors) {
+            this.props.history.push('/songs');
+        }
+    }
+
     userActions() {
         const { currentUser, song } = this.props;
         if (currentUser.id === song.userId) {
@@ -29,6 +35,7 @@ export default class SongShow extends React.Component {
         const response = confirm("Are you sure you want to delete this song?");
         if (response == true) {
             this.props.deleteSong(song.id)
+                .then(() => this.props.history.push('/songs'));
             return true;
         }
         else {
@@ -55,7 +62,9 @@ export default class SongShow extends React.Component {
             <img className="song-show-img" src={song.imageUrl} />
           </div>
           <div className="song-show-details">
+            
           <form className="comment-bar">
+            <img className="comment-img" src="https://leveldanceproject.com/wp-content/uploads/2017/07/BlankProfilePic.png" />
             <input type="text" placeholder="Write a comment"/>
           </form>
           {this.userActions()}

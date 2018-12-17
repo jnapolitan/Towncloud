@@ -712,6 +712,13 @@
      background-color: lightgray;
      padding: 5px;
      box-sizing: border-box;
+     display: flex;
+   }
+
+   .comment-bar img {
+     height: 30px;
+     width: 30px;
+     padding-right: 5px;
    }
 
    .comment-bar input {

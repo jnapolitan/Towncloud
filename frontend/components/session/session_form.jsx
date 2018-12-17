@@ -1,6 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class SessionForm extends React.Component {
+class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +20,8 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.action(this.state)
+      .then(() => this.props.history.push('/songs'));
   }
 
   handleDemo(e) {
@@ -30,7 +32,8 @@ export default class SessionForm extends React.Component {
       password: 'demo123'
     };
 
-    this.props.demoLogin(demoUser);
+    this.props.demoLogin(demoUser)
+      .then(() => this.props.history.push('/songs'));
   }
 
   render() {
@@ -65,3 +68,5 @@ export default class SessionForm extends React.Component {
     )
   }
 }
+
+export default withRouter(SessionForm);

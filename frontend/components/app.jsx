@@ -15,15 +15,17 @@ const App = ({ store }) => (
       <Provider store={store}>
       <HashRouter>
         <div>
-          <ProtectedRoute path="/" component={NavbarContainer} />
           <Switch>
-            <AuthRoute exact path="/splash" component={SplashContainer} />
+          <AuthRoute exact path="/splash" component={SplashContainer} />
+          <ProtectedRoute path="/" component={NavbarContainer} />
+          <Redirect to="/splash" />
           </Switch>
           <Switch>
             <ProtectedRoute path="/songs/:songId/edit" component={EditSongFormContainer} />
             <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
             <ProtectedRoute path="/upload" component={NewSongFormContainer} />
             <ProtectedRoute path="/songs" component={SongIndexContainer} /> 
+            <Redirect to="/songs" />
           </Switch>
         </div>
       </HashRouter>
