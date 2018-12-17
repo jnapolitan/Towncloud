@@ -4,11 +4,12 @@ import SongIndexItem from './song_index_item';
 export default class SongIndex extends React.Component {
     componentDidMount() {
         this.props.fetchAllSongs();
+        this.props.fetchAllUsers();
     }
 
     render() {
         console.log(this.props.songs)
-        if (!this.props.songs){
+        if (!this.props.songs || this.props.users){
             return <div>Loading...</div>;
         }            
 

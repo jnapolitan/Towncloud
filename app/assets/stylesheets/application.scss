@@ -219,6 +219,22 @@
    border: none;
  }
 
+ .trending-songs-container {
+   padding: 20px;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .trending-song-items {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 100%;
+   justify-content: space-between;
+ }
+
  /* MODAL */
 
  .modal {
@@ -352,7 +368,7 @@
    height: 50px;
    background-color: #333333;
    color: lightgray;
-  //  display: none;
+   z-index: 1;
  }
 
  .navbar-content {
@@ -552,7 +568,7 @@
    }
 
    .song-item {
-     width: 20%;
+     width:180px;
      margin: 25px 25px 0 0;
    }
 
@@ -658,4 +674,45 @@
      align-items: center;
      height: 30%;
    }
+
+   .song-details {
+     padding: 20px;
+     box-sizing: border-box;
+     display: flex;
+   }
+
+   .song-user {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .song-user-img {
+     height: 100px;
+     width: 100px;
+     background-image: url('http://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-circle-png-blank-3.png');
+     background-size: contain;
+   }
+
+   .song-desc {
+     padding: 20px;
+   }
    
+   .comment-bar {
+     width: 99%;
+     padding: 5px;
+     margin: 5px;
+     background-color: lightgray;
+     box-sizing: border-box;
+   }
+
+   .comment-bar input {
+     width: 100%;
+     font-size: 12px;
+     margin: 5px auto;
+     padding: 5px;
+     border-radius: 5px;
+     border: 1px solid lightgray;
+     height: 30px;
+     box-sizing: border-box;
+   }

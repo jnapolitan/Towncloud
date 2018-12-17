@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
+import SongIndexItem from '../../components/songs/song_index_item';
+import { Link } from 'react-router-dom';
 
 export default class Splash extends React.Component {
   constructor(props) {
@@ -56,6 +58,22 @@ export default class Splash extends React.Component {
   componentDidMount() {
     this.signUpModal();
     this.logInModal();
+    this.props.fetchAllSongs();
+  }
+
+  latestSongs() {
+    if (!this.props.songs) return <div>Loading...</div>
+
+    const songs = this.props.songs.slice(0, 10).map(song => {
+      return <SongIndexItem key={song.id} song={song} />;
+    })
+    
+    return <div className="trending-songs-container">
+        <h2>Hear what's trending for free in your community</h2>
+        <ul className="trending-song-items">
+          {songs}
+        </ul>
+      </div>;
   }
   
   render () {
@@ -87,6 +105,7 @@ export default class Splash extends React.Component {
             <SignupFormContainer />
           </div>
         </div>
+        {this.latestSongs()}
       </div>;
   }
 }

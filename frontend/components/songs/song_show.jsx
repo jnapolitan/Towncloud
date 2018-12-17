@@ -42,10 +42,16 @@ export default class SongShow extends React.Component {
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
           </div>
+          <form className="comment-bar">
+            <input type="text" placeholder="Write a comment"/>
+          </form>
           {this.userActions()}
           <div className="song-details">
-          <p>By: {users[song.userId].username}</p>
-                <p className="song-desc">{song.description}</p>
+            <div className="song-user">
+                <div className="song-user-img" />
+                <p>{users[song.userId].username}</p>
+            </div>
+            <p className="song-desc">{song.description}</p>
           </div>
         </div>;
     }

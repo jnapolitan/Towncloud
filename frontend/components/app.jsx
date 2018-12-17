@@ -17,8 +17,8 @@ const App = ({ store }) => (
         <div>
           <Switch>
             <AuthRoute exact path="/splash" component={SplashContainer} />
-            <ProtectedRoute path="/" component={NavbarContainer} />
-            <Redirect to="/" />
+            <ProtectedRoute path="/songs" component={NavbarContainer} />
+            <Redirect to="/songs" />
           </Switch>
           <Switch>
             <ProtectedRoute path="/upload" component={NewSongFormContainer} />
