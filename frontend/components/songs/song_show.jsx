@@ -17,10 +17,22 @@ export default class SongShow extends React.Component {
                         <button>Edit Song</button>
                     </Link>
                     <button
-                        onClick={() => this.props.deleteSong(song.id)}
+                        onClick={() => this.confirmDelete()}
                     >Delete Song</button>
                 </div>
             )
+        }
+    }
+
+    confirmDelete() {
+        const { song } = this.props
+        const response = confirm("Are you sure you want to delete this song?");
+        if (response == true) {
+            this.props.deleteSong(song.id)
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -42,6 +54,7 @@ export default class SongShow extends React.Component {
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
           </div>
+          <div className="song-show-details">
           <form className="comment-bar">
             <input type="text" placeholder="Write a comment"/>
           </form>
@@ -53,6 +66,7 @@ export default class SongShow extends React.Component {
             </div>
             <p className="song-desc">{song.description}</p>
           </div>
+            </div>
         </div>;
     }
 }

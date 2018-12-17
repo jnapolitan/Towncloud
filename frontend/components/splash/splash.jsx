@@ -2,7 +2,6 @@ import React from 'react';
 import LoginFormContainer from "../session/login_form_container";
 import SignupFormContainer from "../session/signup_form_container";
 import SongIndexItem from '../../components/songs/song_index_item';
-import { Link } from 'react-router-dom';
 
 export default class Splash extends React.Component {
   constructor(props) {

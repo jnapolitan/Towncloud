@@ -564,7 +564,8 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      width: 80%;
+      width: 70%;
+      border-right: 1px solid lightgray;
    }
 
    .song-item {
@@ -606,7 +607,7 @@
    .song-show-contents {
      width: 100%;
      padding: 20px;
-     background-image: linear-gradient(to top right, #FFEBE1, #FF5500);
+     background-image: linear-gradient(to top right, #DDE7E9, #5D8D96);
      display: flex;
      flex-direction: row;
      justify-content: space-between;
@@ -635,7 +636,7 @@
      padding-right: 20px;
    }
 
-   .waveform-img {
+   .waveform-img { // FOR DISPLAY
      position: absolute;
      left: 20px;
      bottom: 20px;
@@ -675,6 +676,14 @@
      height: 30%;
    }
 
+   .song-show-details {
+     width: 70%;
+     padding: 0 15px;
+     margin: 15px 0;
+     border-right: 1px solid lightgray;
+     box-sizing: border-box;
+   }
+
    .song-details {
      padding: 20px;
      box-sizing: border-box;
@@ -699,17 +708,15 @@
    }
    
    .comment-bar {
-     width: 99%;
-     padding: 5px;
-     margin: 5px;
+     width: 100%;
      background-color: lightgray;
+     padding: 5px;
      box-sizing: border-box;
    }
 
    .comment-bar input {
      width: 100%;
      font-size: 12px;
-     margin: 5px auto;
      padding: 5px;
      border-radius: 5px;
      border: 1px solid lightgray;

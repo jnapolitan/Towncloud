@@ -12,18 +12,17 @@ import { Provider } from 'react-redux';
 
 const App = ({ store }) => (
   <div className="container">
-    <Provider store={store}>
+      <Provider store={store}>
       <HashRouter>
         <div>
+          <ProtectedRoute path="/" component={NavbarContainer} />
           <Switch>
             <AuthRoute exact path="/splash" component={SplashContainer} />
-            <ProtectedRoute path="/songs" component={NavbarContainer} />
-            <Redirect to="/songs" />
           </Switch>
           <Switch>
-            <ProtectedRoute path="/upload" component={NewSongFormContainer} />
             <ProtectedRoute path="/songs/:songId/edit" component={EditSongFormContainer} />
             <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
+            <ProtectedRoute path="/upload" component={NewSongFormContainer} />
             <ProtectedRoute path="/songs" component={SongIndexContainer} /> 
           </Switch>
         </div>
