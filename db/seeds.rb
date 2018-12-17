@@ -42,9 +42,9 @@ ActiveRecord::Base.transaction do
 
     s5 = Song.new(
     user_id: u5.id, 
-    title: "Let's Go (The Royal We)",
-    genre: "Hip Hop",
-    description: "Released by: Run The Jewels, Inc.\n\nRelease date: 11 October 2018"
+    title: "Heads Will Roll (A Trak remix)",
+    genre: "Electronic",
+    description: "Release date:\n1 January 2010\n\nP-line:\n℗ 2009 ℗ 2009 Yeah Yeah Yeahs, under exclusive license to DGC Records"
     )
     s5_image = EzDownload.open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/5.png')
     s5_audio = EzDownload.open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/5.mp3')
