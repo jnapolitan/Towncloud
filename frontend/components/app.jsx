@@ -25,7 +25,6 @@ const App = ({ store }) => (
             <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
             <ProtectedRoute path="/upload" component={NewSongFormContainer} />
             <ProtectedRoute path="/songs" component={SongIndexContainer} /> 
-            <Redirect to="/songs" />
           </Switch>
         </div>
       </HashRouter>

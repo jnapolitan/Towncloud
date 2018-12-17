@@ -31,6 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use JQuery for ajax calls
 gem 'jquery-rails'
 
+# Use to seed DB from AWS
+gem 'ez_download'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
