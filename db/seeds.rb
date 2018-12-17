@@ -32,7 +32,7 @@ s4 = Song.new(
 user_id: u4.id, 
 title: "Let's Go (The Royal We)", 
 genre: "Hip Hop", 
-description: "Released by: Run The Jewels, Inc.\n\nRelease date: 11 October 2018"
+description: "Released by: Run The Jewels, Inc. Release date: 11 October 2018"
 )
 s4_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/4.png')
 s4_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/4.mp3')
@@ -44,7 +44,7 @@ s5 = Song.new(
 user_id: u5.id, 
 title: "Heads Will Roll (A Trak remix)",
 genre: "Electronic",
-description: "Release date:\n1 January 2010\n\nP-line:\n℗ 2009 ℗ 2009 Yeah Yeah Yeahs, under exclusive license to DGC Records"
+description: "Release date: 1 January 2010 P-line: ℗ 2009 ℗ 2009 Yeah Yeah Yeahs, under exclusive license to DGC Records"
 )
 s5_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/5.png')
 s5_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/5.mp3')
@@ -56,7 +56,7 @@ s6 = Song.new(
 user_id: u6.id, 
 title: "Do I Wanna Know?",
 genre: "Rock",
-description: "Arctic Monkeys - 'Do I Wanna Know?' from 'AM', released 2013 on Domino Recording Co.\n\nSubscribe to Arctic Monkeys on YouTube: http://bit.ly/ArcticMonkeysYT"
+description: "Arctic Monkeys - 'Do I Wanna Know?' from 'AM', released 2013 on Domino Recording Co. Subscribe to Arctic Monkeys on YouTube: http://bit.ly/ArcticMonkeysYT"
 )
 s6_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/6.png')
 s6_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/6.mp3')
@@ -68,7 +68,7 @@ s7 = Song.new(
 user_id: u7.id, 
 title: "Get Free (feat. Amber of Dirty Projectors)",
 genre: "Electronic",
-description: "Free Download:\n\nwww.majorlazergetfree.com/"
+description: "Free Download: www.majorlazergetfree.com/"
 )
 s7_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/7.png')
 s7_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/7.mp3')
@@ -91,7 +91,7 @@ s9 = Song.new(
 user_id: u9.id, 
 title: "Six Days (feat Mos Def)",
 genre: "Hip Hop",
-description: "Release date: 1 January 2002\n\nP-line: ℗ 2002 ℗ 2002 A&M Records Ltd., under exclusive license to Universal Island Records Ltd"
+description: "Release date: 1 January 2002 P-line: ℗ 2002 ℗ 2002 A&M Records Ltd., under exclusive license to Universal Island Records Ltd"
 )
 s9_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/9.png')
 s9_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/9.mp3')
