@@ -1,12 +1,32 @@
 import { connect } from 'react-redux';
-import { fetchSong } from '../../actions/song_actions';
+import { 
+    receiveCurrentSong,
+    togglePlaySong,
+    seekSong
+ } from '../../actions/playbar_actions';
 import Playbar from './playbar';
 
-const mapStateToProps = (state, ownProps) => ({
-    currentSong: state.entities.songs[ownProps.match.params.songId]
-});
+const mapStateToProps = (state) => {
+    const { 
+        currentSong, 
+        currentTime, 
+        isPlaying, 
+        seekTime 
+    } = state.ui.playbar;
+
+    return {
+    songShowing: state.entities.songs,
+    currentSong: currentSong,
+    currentTime: currentTime,
+    isPlaying: isPlaying,
+    seekTime: seekTime
+   };
+};
 
 const mapDispatchToProps = dispatch => ({
+    receiveCurrentSong: song => dispatch(receiveCurrentSong(song)),
+    togglePlaySong: () => dispatch(togglePlaySong()),
+    seekSong: time => dispatch(seekSong(time)),
     fetchSong: id => dispatch(fetchSong(id))
 });
 

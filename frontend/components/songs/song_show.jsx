@@ -2,16 +2,22 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 export default class SongShow extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount() {
         this.props.fetchAllUsers();
-        this.props.fetchSong(this.props.match.params.songId);
+        this.props
+          .fetchSong(this.props.match.params.songId)
+            .then(this.props.receiveCurrentSong(this.props.match.params.songId));
     }
 
     componentDidUpdate() {
         if (this.props.errors) {
             this.props.history.push('/songs');
         }
+        this.audio = document.getElementById("audio");
     }
 
     userActions() {
@@ -43,16 +49,31 @@ export default class SongShow extends React.Component {
         }
     }
 
+    togglePlay() {
+        // const playButton = document.getElementById('play');
+        if (this.props.isPlaying) {
+            this.audio.pause();
+            this.props.togglePlaySong(this.props.isPlaying);
+        } else {
+            this.audio.play();
+            this.props.togglePlaySong(this.props.isPlaying);
+        }
+    }
+
     render() {
         const { song, users } = this.props;
         if (!song || Object.keys(users).length === 1) {
             return <div className="song-show-container">Loading...</div>;
         }
-        
+    
         return <div className="song-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-                <img className="play-button-img" src="https://www.seoclerk.com/pics/446033-13uMBM1476730969.png" />
+                <button 
+                    id="play" 
+                    className="play-button-img"
+                    onClick={() => this.togglePlay()}
+                >Play/Pause</button>
                 <div>
                     <h3><span className="song-show-text">{song.title}</span></h3>
                     <p><span className="song-show-text">{song.genre}</span></p>
@@ -76,6 +97,9 @@ export default class SongShow extends React.Component {
             <p className="song-desc">{song.description}</p>
           </div>
             </div>
+            <audio id="audio">
+                <source src={song.audioUrl} type="audio/mp3" />
+            </audio>
         </div>;
     }
 }
