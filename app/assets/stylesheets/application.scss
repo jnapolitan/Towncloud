@@ -554,6 +554,7 @@
       margin: 0 auto;
       width: 1240px;
       box-sizing: border-box;
+      height: 100vh;
    }
 
    .muted-text {
@@ -602,6 +603,7 @@
      margin: 0 auto;
      width: 1240px;
      box-sizing: border-box;
+     height: 100vh;
    }
 
    .song-show-contents {
@@ -729,4 +731,30 @@
      border: 1px solid lightgray;
      height: 30px;
      box-sizing: border-box;
+   }
+
+   // PLAYBAR
+
+   .playbar-container {
+     padding: 10px;
+     background: #F2F2F2;
+     border-top: 1px solid lightgray;
+     border-bottom: 1px solid lightgray;
+     width: 100%;
+     position: fixed;
+     left: 0px;
+     bottom: 0px;
+     z-index: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+   .playbar-contents {
+     width: 1240px;
+   }
+
+button#play {
+     border: none;
+     background: none;
    }
