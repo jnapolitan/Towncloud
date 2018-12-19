@@ -79,11 +79,11 @@ export default class Playbar extends React.Component {
 
     calculateLength(length) {
         const minutes = Math.floor(length / 60),
-            seconds_int = length - minutes * 60,
-            seconds_str = seconds_int.toString(),
-            seconds = seconds_str.substr(0, 2),
-            time = minutes + ':' + seconds
-
+          seconds_int = Math.floor(length - minutes * 60),
+          seconds_str = seconds_int.toString(),
+          seconds = seconds_str.substr(0, 2),
+        time = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+        
         return time;
     }
 
@@ -91,8 +91,7 @@ export default class Playbar extends React.Component {
         const currentMinute = parseInt(this.audio.currentTime / 60) % 60,
             currentSecondsLong = this.audio.currentTime % 60,
             currentSeconds = currentSecondsLong.toFixed(),
-            currentTime = (currentMinute < 10 ? "0" + currentMinute : currentMinute) + ":" + (currentSeconds < 10 ? "0" + currentSeconds : currentSeconds);
-
+            currentTime = currentMinute + ":" + (currentSeconds < 10 ? "0" + currentSeconds : currentSeconds);
          return currentTime;
     }
 
