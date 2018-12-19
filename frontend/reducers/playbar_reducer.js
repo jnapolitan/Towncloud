@@ -3,6 +3,7 @@ import {
     SEEK_SONG,
     RECEIVE_PLAYER_SONG
 } from '../actions/playbar_actions';
+import { LOGOUT_CURRENT_USER } from '../actions/session';
 
 const defaultState = {
     audioUrl: '',
@@ -58,6 +59,8 @@ export default (state = defaultState, action) => {
             return Object.assign({}, state, {isPlaying: !state.isPlaying});
         case SEEK_SONG:
             return Object.assign({}, state, {seekTime: action.seconds});
+        case LOGOUT_CURRENT_USER:
+            return defaultState;
         default:
             return state;
     }
