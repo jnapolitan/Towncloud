@@ -12,7 +12,6 @@ export default class Playbar extends React.Component {
         } = this.props;
 
         this.state = {
-            audioUrl: '',
             currentSong: currentSong,
             currentTime: currentTime,
             isPlaying: isPlaying,
@@ -23,7 +22,7 @@ export default class Playbar extends React.Component {
     }
 
    componentDidUpdate(prevProps) {
-       const playButton = document.getElementById("playbar-button");
+       const playButton = document.getElementById("play-button");
        playButton.innerHTML = this.buttonClass();
    } 
 
@@ -32,6 +31,23 @@ export default class Playbar extends React.Component {
             return '<i class="fas fa-pause"></i>';
         } else {
             return '<i class="fas fa-play"></i>';
+        }
+    }
+
+    songdetails() {
+        const { currentSong } = this.props;
+        if (currentSong) {
+         return (
+             <div className="playbar-song-details">
+                <img src={currentSong.imageUrl} />
+                <div className="playbar-song-text">
+                    <p className="song-title">{currentSong.title}</p>
+                    <p>{currentSong.genre}</p>
+                 </div>
+             </div>
+         )
+        } else {
+            return
         }
     }
 
@@ -55,7 +71,12 @@ export default class Playbar extends React.Component {
                     <audio id="playbar-audio">
                         <source src={this.props.audioUrl} type="audio/mp3" />
                     </audio>
-                    <button id="playbar-button" onClick={() => this.togglePlay()} type="button"><i className="fas fa-play"></i></button>
+                    <div className="playbar-buttons">
+                        <button className="playbar-button"><i className="fa fa-step-backward"></i></button>
+                        <button id="play-button" className="playbar-button" onClick={() => this.togglePlay()} type="button"><i className="fas fa-play"></i></button>
+                        <button className="playbar-button"><i className="fa fa-step-forward"></i></button>
+                    </div>
+                    {this.songdetails()}
                 </div>
             </div>
         )
