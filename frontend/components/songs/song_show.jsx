@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -48,18 +49,6 @@ export default class SongShow extends React.Component {
         }
     }
 
-    togglePlay() {
-        const { isPlaying, togglePlaySong, song } = this.props;
-        const playButton = document.getElementById('play');
-        if (isPlaying) {
-            togglePlaySong(isPlaying, song);
-            playButton.className = "play-button-img";
-        } else {
-            togglePlaySong(isPlaying, song);
-            playButton.className = "pause-button-img";
-        }
-    }
-
     buttonClass() {
         const { isPlaying, song, currentSong } = this.props;
         if (isPlaying && song === currentSong) {
@@ -67,6 +56,11 @@ export default class SongShow extends React.Component {
         } else {
             return "play-button-img"
         }
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.receivePlayerSong(this.props.song)
     }
 
     render() {
@@ -77,8 +71,8 @@ export default class SongShow extends React.Component {
         return <div className="song-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-            <form>
-                <input type="submit" id="play" className={this.buttonClass()} value="" onClick={() => this.togglePlay()}/>
+            <form onSubmit={this.handleClick}>
+                <input type="submit" id="play" className={this.buttonClass()} value="" />
             </form>
             <div>
                 <h3><span className="song-show-text">{song.title}</span></h3>

@@ -1,12 +1,12 @@
 import { 
-    TOGGLE_PLAY_SONG,
-    SEEK_SONG
+    TOGGLE_PLAY_PAUSE,
+    SEEK_SONG,
+    RECEIVE_PLAYER_SONG
 } from '../actions/playbar_actions';
-import { RECEIVE_SONG } from '../actions/song_actions';
 
 const defaultState = {
+    audioUrl: '',
     currentSong: null,
-    songPlaying: null,
     isPlaying: false,
     currentTime: 0,
     songDuration: null,
@@ -17,26 +17,45 @@ export default (state = defaultState, action) => {
     Object.freeze(state);
 
     switch(action.type) {
-        case RECEIVE_SONG:
-            return Object.assign(
-                {}, 
-                state, 
-                {currentSong: action.song}
-            );
-        case TOGGLE_PLAY_SONG:
-            if (action.song !== state.songPlaying) {
-                return Object.assign(
-                    {},
-                    state,
-                    {isPlaying: true, songPlaying: action.song}
-                );
-            } else {
+        case RECEIVE_PLAYER_SONG:
+            const { currentSong, isPlaying } = state;
+            if (!currentSong) {
+                const audio = document.getElementById("playbar-audio");
+                audio.setAttribute('src', action.song.audioUrl);
+                audio.play();
                 return Object.assign(
                     {}, 
-                    state, 
-                    {isPlaying: !state.isPlaying}
-                );
-            };
+                    state, { 
+                        currentSong: action.song, 
+                        isPlaying: true
+                    });
+            } else if (currentSong && currentSong !== action.song) {
+                const audio = document.getElementById("playbar-audio");
+                audio.setAttribute('src', action.song.audioUrl);
+                audio.play();
+                return Object.assign({},
+                    state, {
+                        currentSong: action.song,
+                        isPlaying: true
+                    });
+            } else if (currentSong && currentSong === action.song) {
+                const audio = document.getElementById("playbar-audio");
+                if (isPlaying) {
+                    audio.pause();
+                    return Object.assign({},
+                        state, {
+                            isPlaying: false
+                        });
+                } else {
+                    audio.play();
+                    return Object.assign({},
+                        state, {
+                            isPlaying: true
+                        });
+                }
+            }
+        case TOGGLE_PLAY_PAUSE:
+            return Object.assign({}, state, {isPlaying: !state.isPlaying});
         case SEEK_SONG:
             return Object.assign({}, state, {seekTime: action.seconds});
         default:

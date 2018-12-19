@@ -5,7 +5,6 @@ export default class Playbar extends React.Component {
         super(props);
 
         const { 
-            songPlaying, 
             currentSong, 
             currentTime, 
             isPlaying, 
@@ -13,7 +12,7 @@ export default class Playbar extends React.Component {
         } = this.props;
 
         this.state = {
-            songPlaying: songPlaying,
+            audioUrl: '',
             currentSong: currentSong,
             currentTime: currentTime,
             isPlaying: isPlaying,
@@ -23,38 +22,38 @@ export default class Playbar extends React.Component {
         // this.calculateLength = this.calculateLength.bind(this)
     }
 
-    componentDidUpdate() {
-        this.song = document.getElementById('playbar-audio');
-    }
+   componentDidUpdate(prevProps) {
+       const playButton = document.getElementById("playbar-button");
+       playButton.innerHTML = this.buttonClass();
+   } 
 
     buttonClass() {
         if (this.props.isPlaying) {
-            return '<i class="fas fa-play"></i>';
-        } else {
             return '<i class="fas fa-pause"></i>';
+        } else {
+            return '<i class="fas fa-play"></i>';
         }
     }
 
     togglePlay() {
-        const playButton = document.getElementById('playbar-button');
-        if (this.props.isPlaying) {
-            this.song.pause();
-            this.props.togglePlaySong(this.props.isPlaying);
-            playButton.innerHTML = this.buttonClass();
+        const audio = document.getElementById('playbar-audio');
+        if (!this.props.currentSong) {
+           return;
+        } else if (this.props.isPlaying) {
+            audio.pause();
+            this.props.togglePlayPause();
         } else {
-            this.song.play();
-            this.props.togglePlaySong(this.props.isPlaying);
-            playButton.innerHTML = this.buttonClass();
+            audio.play();
+            this.props.togglePlayPause();
         }
     }
 
     render() {
-        if (!this.props.currentSong) return <div>Loading...</div>
         return (
             <div className="playbar-container">
                 <div className="playbar-contents">
                     <audio id="playbar-audio">
-                        <source src={this.props.currentSong.audioUrl} type="audio/mp3" />
+                        <source src={this.props.audioUrl} type="audio/mp3" />
                     </audio>
                     <button id="playbar-button" onClick={() => this.togglePlay()} type="button"><i className="fas fa-play"></i></button>
                 </div>
