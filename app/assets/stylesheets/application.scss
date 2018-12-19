@@ -802,8 +802,26 @@
       line-height: 12px;
     }
 
+    .playbar-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .playbar-progress p {
+      width: 100px;
+      text-align: center;
+    }
+
+    .playbar-seekbar {
+      width: 30%
+    }
+
     p.song-title {
       font-size: 12px;
       color: gray;
     }
 
+    i {
+      font-size: 14px;
+    }

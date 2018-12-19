@@ -1,6 +1,7 @@
 export const RECEIVE_PLAYER_SONG = 'RECEIVE_PLAYER_SONG';
 export const TOGGLE_PLAY_PAUSE = 'TOGGLE_PLAY_PAUSE';
 export const SEEK_SONG = 'SEEK_SONG';
+export const RECEIVE_CURRENT_TIME = 'RECEIVE_CURRENT_TIME';
 
 export const receivePlayerSong = song => ({
     type: RECEIVE_PLAYER_SONG,
@@ -14,5 +15,10 @@ export const togglePlayPause = () => ({
 export const seekSong = time => ({
     type: SEEK_SONG,
     time
+});
+
+export const receiveCurrentTime = currentTime => ({
+    type: RECEIVE_CURRENT_TIME,
+    currentTime
 });
 

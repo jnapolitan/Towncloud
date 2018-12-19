@@ -1,12 +1,12 @@
 import { 
     TOGGLE_PLAY_PAUSE,
     SEEK_SONG,
-    RECEIVE_PLAYER_SONG
+    RECEIVE_PLAYER_SONG,
+    RECEIVE_CURRENT_TIME
 } from '../actions/playbar_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session';
 
 const defaultState = {
-    audioUrl: '',
     currentSong: null,
     isPlaying: false,
     currentTime: 0,
@@ -59,6 +59,8 @@ export default (state = defaultState, action) => {
             return Object.assign({}, state, {isPlaying: !state.isPlaying});
         case SEEK_SONG:
             return Object.assign({}, state, {seekTime: action.seconds});
+        case RECEIVE_CURRENT_TIME:
+            return Object.assign({}, state, {currentTime: action.currentTime});
         case LOGOUT_CURRENT_USER:
             return defaultState;
         default:
