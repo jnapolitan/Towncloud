@@ -49,13 +49,13 @@ export default class SongShow extends React.Component {
     }
 
     togglePlay() {
-        const { isPlaying, togglePlaySong } = this.props;
+        const { isPlaying, togglePlaySong, song } = this.props;
         const playButton = document.getElementById('play');
         if (isPlaying) {
-            togglePlaySong();
+            togglePlaySong(isPlaying, song);
             playButton.className = "play-button-img";
         } else {
-            togglePlaySong();
+            togglePlaySong(isPlaying, song);
             playButton.className = "pause-button-img";
         }
     }
@@ -69,25 +69,6 @@ export default class SongShow extends React.Component {
         }
     }
 
-    handleClick() {
-        const { song, currentSong, isPlaying, togglePlaySong, receivePlayerSong } = this.props;
-        const audio = document.getElementById('playbar-audio');
-        debugger
-        if (currentSong && song === currentSong) {
-            if (isPlaying) {
-                audio.pause()
-                togglePlaySong()
-            } else {
-                audio.play()
-                togglePlaySong()
-            }
-        } else {
-            receivePlayerSong(song)
-            audio.play()
-            togglePlaySong()
-        }
-    }
-
     render() {
         const { song, users } = this.props;
         if (!song || Object.keys(users).length === 1) {
@@ -97,7 +78,7 @@ export default class SongShow extends React.Component {
         <div className="song-show-contents">
             <div className="song-show-left">
             <form>
-                <input type="submit" id="play" className={this.buttonClass()} value="" onClick={() => this.handleClick()}/>
+                <input type="submit" id="play" className={this.buttonClass()} value="" onClick={() => this.togglePlay()}/>
             </form>
             <div>
                 <h3><span className="song-show-text">{song.title}</span></h3>

@@ -5,13 +5,19 @@ export default class Playbar extends React.Component {
         super(props);
 
         const { 
+            songPlaying, 
             currentSong, 
-            isPlaying
+            currentTime, 
+            isPlaying, 
+            seekTime 
         } = this.props;
 
         this.state = {
+            songPlaying: songPlaying,
             currentSong: currentSong,
-            isPlaying: isPlaying
+            currentTime: currentTime,
+            isPlaying: isPlaying,
+            seekTime: seekTime
         };
 
         // this.calculateLength = this.calculateLength.bind(this)
@@ -33,11 +39,11 @@ export default class Playbar extends React.Component {
         const playButton = document.getElementById('playbar-button');
         if (this.props.isPlaying) {
             this.song.pause();
-            this.props.togglePlaySong();
+            this.props.togglePlaySong(this.props.isPlaying);
             playButton.innerHTML = this.buttonClass();
         } else {
             this.song.play();
-            this.props.togglePlaySong();
+            this.props.togglePlaySong(this.props.isPlaying);
             playButton.innerHTML = this.buttonClass();
         }
     }
@@ -48,7 +54,7 @@ export default class Playbar extends React.Component {
             <div className="playbar-container">
                 <div className="playbar-contents">
                     <audio id="playbar-audio">
-                        <source src={this.props.currentSong.audioUrl || ''} type="audio/mp3" />
+                        <source src={this.props.currentSong.audioUrl} type="audio/mp3" />
                     </audio>
                     <button id="playbar-button" onClick={() => this.togglePlay()} type="button"><i className="fas fa-play"></i></button>
                 </div>
