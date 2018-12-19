@@ -7,10 +7,9 @@ export default class SongShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllUsers();
-        this.props
-          .fetchSong(this.props.match.params.songId)
-            .then(this.props.receiveCurrentSong(this.props.match.params.songId));
+        const { users, song } = this.props;
+        if (Object.keys(users).length === 1) this.props.fetchAllUsers();
+        if (!song) this.props.fetchSong(this.props.match.params.songId);
     }
 
     componentDidUpdate() {
@@ -50,13 +49,42 @@ export default class SongShow extends React.Component {
     }
 
     togglePlay() {
-        // const playButton = document.getElementById('play');
-        if (this.props.isPlaying) {
-            this.audio.pause();
-            this.props.togglePlaySong(this.props.isPlaying);
+        const { isPlaying, togglePlaySong } = this.props;
+        const playButton = document.getElementById('play');
+        if (isPlaying) {
+            togglePlaySong();
+            playButton.className = "play-button-img";
         } else {
-            this.audio.play();
-            this.props.togglePlaySong(this.props.isPlaying);
+            togglePlaySong();
+            playButton.className = "pause-button-img";
+        }
+    }
+
+    buttonClass() {
+        const { isPlaying, song, currentSong } = this.props;
+        if (isPlaying && song === currentSong) {
+            return "pause-button-img"
+        } else {
+            return "play-button-img"
+        }
+    }
+
+    handleClick() {
+        const { song, currentSong, isPlaying, togglePlaySong, receivePlayerSong } = this.props;
+        const audio = document.getElementById('playbar-audio');
+        debugger
+        if (currentSong && song === currentSong) {
+            if (isPlaying) {
+                audio.pause()
+                togglePlaySong()
+            } else {
+                audio.play()
+                togglePlaySong()
+            }
+        } else {
+            receivePlayerSong(song)
+            audio.play()
+            togglePlaySong()
         }
     }
 
@@ -65,19 +93,16 @@ export default class SongShow extends React.Component {
         if (!song || Object.keys(users).length === 1) {
             return <div className="song-show-container">Loading...</div>;
         }
-    
         return <div className="song-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-                <button 
-                    id="play" 
-                    className="play-button-img"
-                    onClick={() => this.togglePlay()}
-                >Play/Pause</button>
-                <div>
-                    <h3><span className="song-show-text">{song.title}</span></h3>
-                    <p><span className="song-show-text">{song.genre}</span></p>
-                </div>
+            <form>
+                <input type="submit" id="play" className={this.buttonClass()} value="" onClick={() => this.handleClick()}/>
+            </form>
+            <div>
+                <h3><span className="song-show-text">{song.title}</span></h3>
+                <p><span className="song-show-text">{song.genre}</span></p>
+            </div>
             </div>
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
@@ -97,9 +122,6 @@ export default class SongShow extends React.Component {
             <p className="song-desc">{song.description}</p>
           </div>
             </div>
-            <audio id="audio">
-                <source src={song.audioUrl} type="audio/mp3" />
-            </audio>
         </div>;
     }
 }

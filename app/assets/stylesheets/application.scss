@@ -631,11 +631,24 @@
       height: 350px;
    }
 
-   .play-button-img { // FOR DISPLAY
+   .play-button-img {
      height: 100px;
      width: 100px;
-     float: left;
      padding-right: 20px;
+     background: image-url('play-button.png');
+     background-size: contain;
+     background-repeat: no-repeat;
+     cursor: pointer;
+   }
+
+   .pause-button-img {
+     height: 100px;
+     width: 100px;
+     padding-right: 20px;
+     background: image-url('pause-button.png');
+     background-size: contain;
+     background-repeat: no-repeat;
+     cursor: pointer;
    }
 
    .waveform-img { // FOR DISPLAY
@@ -758,3 +771,8 @@ button#play {
      border: none;
      background: none;
    }
+
+button#playbar-button {
+  border: none;
+  background: none;
+}
