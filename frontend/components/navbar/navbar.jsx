@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchContainer from '../search/search_container'
 
 export default class Navbar extends React.Component {
 
@@ -12,9 +13,7 @@ export default class Navbar extends React.Component {
           <a href="/#/songs" className="text"><li>Stream</li></a>
           <a href="/#/users" className="text"><li>Community</li></a>
         </ul>
-        <div className="navbar-search">
-          <input type="text" placeholder="Search" />
-        </div>
+        <SearchContainer />
         <ul className="navbar-right">
           <li><Link to="/upload"><button>Upload</button></Link></li>
           <li><button onClick={logout}>Logout</button></li>

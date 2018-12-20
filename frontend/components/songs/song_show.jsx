@@ -66,7 +66,7 @@ export default class SongShow extends React.Component {
 
     render() {
         const { song, users } = this.props;
-        if (!song || Object.keys(users).length === 1) {
+        if (!song || Object.keys(users).length < 2) {
             return <div className="comp-show-container">Loading...</div>;
         }
 
