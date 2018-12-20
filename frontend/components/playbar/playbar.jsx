@@ -116,6 +116,7 @@ export default class Playbar extends React.Component {
         progressbar.value = (this.props.currentTime / audio.duration);
         progressbar.addEventListener('click', seek);
 
+        // const { receiveCurrentTime } = this.props;
         function seek(e) {
             const percent = e.offsetX / this.offsetWidth;
             audio.currentTime = percent * audio.duration;

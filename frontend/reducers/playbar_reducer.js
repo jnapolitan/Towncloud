@@ -1,6 +1,6 @@
 import { 
     TOGGLE_PLAY_PAUSE,
-    SEEK_SONG,
+    RECEIVE_SEEK_TIME,
     RECEIVE_PLAYER_SONG,
     RECEIVE_CURRENT_TIME
 } from '../actions/playbar_actions';
@@ -63,8 +63,8 @@ export default (state = defaultState, action) => {
             }
         case TOGGLE_PLAY_PAUSE:
             return Object.assign({}, state, {isPlaying: !state.isPlaying});
-        case SEEK_SONG:
-            return Object.assign({}, state, {seekTime: action.seconds});
+        case RECEIVE_SEEK_TIME:
+            return Object.assign({}, state, {seekTime: action.time});
         case RECEIVE_CURRENT_TIME:
             return Object.assign({}, state, {currentTime: action.currentTime});
         case LOGOUT_CURRENT_USER:

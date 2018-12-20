@@ -11,7 +11,7 @@ export const togglePlayPause = () => ({
     type: TOGGLE_PLAY_PAUSE
 });
 
-export const seekSong = time => ({
+export const receiveSeekTime = time => ({
     type: SEEK_SONG,
     time
 });

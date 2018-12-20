@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { 
     togglePlayPause,
-    seekSong,
+    receiveSeekTime,
     receiveCurrentTime
  } from '../../actions/playbar_actions';
 import Playbar from './playbar';
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     togglePlayPause: () => dispatch(togglePlayPause()),
-    seekSong: time => dispatch(seekSong(time)),
+    receiveSeekTime: time => dispatch(receiveSeekTime(time)),
     receiveCurrentTime: currentTime => dispatch(receiveCurrentTime(currentTime))
 });
 
