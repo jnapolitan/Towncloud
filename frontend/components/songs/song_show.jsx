@@ -9,7 +9,7 @@ export default class SongShow extends React.Component {
 
     componentDidMount() {
         const { users, song } = this.props;
-        if (Object.keys(users).length === 1) this.props.fetchAllUsers();
+        if (Object.keys(users).length < 3) this.props.fetchAllUsers();
         if (!song) this.props.fetchSong(this.props.match.params.songId);
     }
 
@@ -68,16 +68,17 @@ export default class SongShow extends React.Component {
         if (!song || Object.keys(users).length === 1) {
             return <div className="comp-show-container">Loading...</div>;
         }
+
         return <div className="comp-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-            <form onSubmit={this.handleClick}>
-                <input type="submit" id="play" className={this.buttonClass()} value="" />
-            </form>
-            <div>
-                <h3><span className="song-show-text">{song.title}</span></h3>
-                <p><span className="song-show-text">{song.genre}</span></p>
-            </div>
+                <form onSubmit={this.handleClick}>
+                    <input type="submit" id="play" className={this.buttonClass()} value="" />
+                </form>
+                <div>
+                    <h3><span className="song-show-text">{song.title}</span></h3>
+                        <p><span className="song-show-text">{users[song.userId].username}</span></p>
+                </div>
             </div>
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
@@ -91,8 +92,12 @@ export default class SongShow extends React.Component {
           {this.userActions()}
           <div className="song-details">
             <div className="song-user">
-                <div className="song-user-img" />
-                <p>{users[song.userId].username}</p>
+                <Link to={`/users/${song.userId}`}>
+                    <img src={users[song.userId].avatarUrl} className="song-user-avatar" />
+                </Link>
+                <Link to={`/users/${song.userId}`}>
+                    <p className="song-user-text">{users[song.userId].username}</p>
+                </Link>        
             </div>
             <p className="song-desc">{song.description}</p>
           </div>

@@ -3,7 +3,7 @@ import UserIndexItem from './user_index_item';
 
 export default class UserIndex extends React.Component {
     componentDidMount() {
-        if (this.props.users.length < 2) this.props.fetchAllUsers();
+        if (this.props.users.length < 3) this.props.fetchAllUsers();
     }
 
     render () {

@@ -13,7 +13,7 @@ const receiveAllUsers = (users) => ({
 });
 
 const receiveUser = (user) => ({
-    type: RECEIVE_ALL_USERS,
+    type: RECEIVE_USER,
     user
 });
 
@@ -38,7 +38,7 @@ export const clearSessionErrors = () => ({
 export const fetchAllUsers = () => dispatch => SessionAPIUtil.fetchAllUsers()
     .then(users => (dispatch(receiveAllUsers(users))));
 
-export const fetchUser = () => dispatch => SessionAPIUtil.fetchUser()
+export const fetchUser = (id) => dispatch => SessionAPIUtil.fetchUser(id)
     .then(user => (dispatch(receiveUser(user))));
 
 export const createUser = (user) => dispatch => SessionAPIUtil.createUser(user)

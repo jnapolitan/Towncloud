@@ -3,18 +3,54 @@ ActiveRecord::Base.transaction do
     User.destroy_all
     Song.destroy_all
 
-    u1 = User.create(username: 'demo', password: 'demo123')
-    u2 = User.create(username: 'julian', password: 'password')
-    u3 = User.create(username: 'Dillon Francis', password: 'password')
-    u4 = User.create(username: 'Run the Jewels', password: 'password')
-    u5 = User.create(username: 'Yeah Yeah Yeahs', password: 'password')
-    u6 = User.create(username: 'Arctic Monkeys', password: 'password')
-    u7 = User.create(username: 'Major Lazer', password: 'password')
-    u8 = User.create(username: 'Justice', password: 'password')
-    u9 = User.create(username: 'DJ Shadow', password: 'password')
-    u10 = User.create(username: 'Justin Timberlake', password: 'password')
-    u11 = User.create(username: 'Grateful Dead', password: 'password')
-    u12 = User.create(username: 'Miles Davis', password: 'password')
+    u1 = User.create(username: 'demo', password: 'demo123', location: 'Lancaster, United States')
+    u1_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/blank.png')
+    u1.avatar.attach(io: u1_avatar, filename: 'u1.png')
+    u1.save!
+    u2 = User.new(username: 'julian', password: 'password', location: 'Oakland, United States')
+    u2_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u2.png')
+    u2.avatar.attach(io: u2_avatar, filename: 'u2.png')
+    u2.save!
+    u3 = User.new(username: 'Dillon Francis', password: 'password', location: 'Los Angeles, United States')
+    u3_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u3.png')
+    u3.avatar.attach(io: u3_avatar, filename: 'u3.png')
+    u3.save!
+    u4 = User.new(username: 'Run the Jewels', password: 'password', location: 'NYC, United States')
+    u4_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u4.png')
+    u4.avatar.attach(io: u4_avatar, filename: 'u4.png')
+    u4.save!
+    u5 = User.new(username: 'Yeah Yeah Yeahs', password: 'password', location: 'NYC, United States')
+    u5_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u5.png')
+    u5.avatar.attach(io: u5_avatar, filename: 'u5.png')
+    u5.save!
+    u6 = User.new(username: 'Arctic Monkeys', password: 'password', location: 'Sheffield, United Kingdom')
+    u6_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u6.png')
+    u6.avatar.attach(io: u6_avatar, filename: 'u6.png')
+    u6.save!
+    u7 = User.new(username: 'Major Lazer', password: 'password', location: 'San Fracisco, United States')
+    u7_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u7.png')
+    u7.avatar.attach(io: u7_avatar, filename: 'u7.png')
+    u7.save!
+    u8 = User.new(username: 'Justice', password: 'password', location: 'Kingston, Jamaica')
+    u8_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u8.png')
+    u8.avatar.attach(io: u8_avatar, filename: 'u8.png')
+    u8.save!
+    u9 = User.new(username: 'DJ Shadow', password: 'password', location: 'San Fracisco, United States')
+    u9_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u9.png')
+    u9.avatar.attach(io: u9_avatar, filename: 'u9.png')
+    u9.save!
+    u10 = User.new(username: 'Justin Timberlake', password: 'password', location: 'Los Angeles, United States')
+    u10_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u10.png')
+    u10.avatar.attach(io: u10_avatar, filename: 'u10.png')
+    u10.save!
+    u11 = User.new(username: 'Grateful Dead', password: 'password', location: 'San Fracisco, United States')
+    u11_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u11.png')
+    u11.avatar.attach(io: u11_avatar, filename: 'u11.png')
+    u11.save!
+    u12 = User.new(username: 'Miles Davis', password: 'password', location: 'NYC, United States')
+    u12_avatar = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/u12.png')
+    u12.avatar.attach(io: u12_avatar, filename: 'u12.png')
+    u12.save!
 
     s3 = Song.new(
         user_id: u3.id, 
