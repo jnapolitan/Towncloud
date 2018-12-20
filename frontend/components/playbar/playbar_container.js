@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
     const { 
         currentSong,
         songPlaying,
-        currentTime, 
+        currentTime,
+        songDuration,
         isPlaying, 
         seekTime 
     } = state.ui.playbar;
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => {
         songPlaying: songPlaying,
         currentSong: currentSong,
         currentTime: currentTime,
+        songDuration: songDuration,
         isPlaying: isPlaying,
         seekTime: seekTime
    };

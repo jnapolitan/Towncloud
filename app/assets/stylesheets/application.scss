@@ -766,7 +766,6 @@
    .playbar-contents {
      width: 1240px;
      display: flex;
-     justify-content: space-between;
    }
 
    .playbar-buttons {
@@ -805,16 +804,15 @@
     .playbar-progress {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      width: 70%;
+      padding: 0 25px;
     }
 
     .playbar-progress p {
-      width: 100px;
+      width: 50px;
       text-align: center;
-    }
-
-    .playbar-seekbar {
-      width: 30%
+      font-size: 12px;
     }
 
     p.song-title {
@@ -822,6 +820,32 @@
       color: gray;
     }
 
+    p#current-time {
+      color: #FF5500;
+    }
+
     i {
       font-size: 14px;
+    }
+
+    .playbar-container {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    progress[value] {
+       -webkit-appearance: none;
+       appearance: none;
+       background-color: lightgray;
+       color: #FF5500;
+       height: 3px;
+       width: 100%;
+    }
+    progress[value]::-webkit-progress-bar {
+      background-color: lightgray;
+      color: #FF5500;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: #FF5500;
     }

@@ -10,7 +10,7 @@ const defaultState = {
     currentSong: null,
     isPlaying: false,
     currentTime: 0,
-    songDuration: null,
+    songDuration: 0,
     seekTime: 0
 };
 
@@ -28,7 +28,10 @@ export default (state = defaultState, action) => {
                     {}, 
                     state, { 
                         currentSong: action.song, 
-                        isPlaying: true
+                        isPlaying: true,
+                        currentTime: 0,
+                        songDuration: 0,
+                        seekTime: 0
                     });
             } else if (currentSong && currentSong !== action.song) {
                 const audio = document.getElementById("playbar-audio");
@@ -37,7 +40,10 @@ export default (state = defaultState, action) => {
                 return Object.assign({},
                     state, {
                         currentSong: action.song,
-                        isPlaying: true
+                        isPlaying: true,
+                        currentTime: 0,
+                        songDuration: 0,
+                        seekTime: 0
                     });
             } else if (currentSong && currentSong === action.song) {
                 const audio = document.getElementById("playbar-audio");
