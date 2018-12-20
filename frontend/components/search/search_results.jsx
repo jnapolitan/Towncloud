@@ -10,12 +10,10 @@ export default class SearchResults extends React.Component {
                 return <UserSearchItem key={user.id} user={user} />;
             });
 
-            return (
-                <div>
-                    <h4>Artists</h4>
-                    <ul>{users}</ul>
-                </div>
-            )
+            return <div className="search-section">
+                <h4 className="search-header">Artists</h4>
+                <ul>{users}</ul>
+              </div>;
         }
     }
 
@@ -25,12 +23,10 @@ export default class SearchResults extends React.Component {
                 return <SongSearchItem key={song.id} song={song} />;
             });
 
-            return (
-                <div>
-                    <h4>Songs</h4>
-                    <ul>{songs}</ul>
-                </div>
-            )
+            return <div className="search-section">
+                <h4 className="search-header">Songs</h4>
+                <ul>{songs}</ul>
+              </div>;
         }
     }
 
