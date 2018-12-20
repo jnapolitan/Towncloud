@@ -66,9 +66,9 @@ export default class SongShow extends React.Component {
     render() {
         const { song, users } = this.props;
         if (!song || Object.keys(users).length === 1) {
-            return <div className="song-show-container">Loading...</div>;
+            return <div className="comp-show-container">Loading...</div>;
         }
-        return <div className="song-show-container">
+        return <div className="comp-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
             <form onSubmit={this.handleClick}>
