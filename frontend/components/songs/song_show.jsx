@@ -78,7 +78,9 @@ export default class SongShow extends React.Component {
                 </form>
                 <div>
                     <h3><span className="song-show-text">{song.title}</span></h3>
-                    <p><span className="song-show-text">{users[song.userId].username}</span></p>
+                    <Link to={`/users/${song.userId}`}>
+                        <p><span className="song-show-text">{users[song.userId].username}</span></p>
+                    </Link>
                 </div>
             </div>
             <div className="waveform-img" />
