@@ -16,10 +16,10 @@ export default class SongIndex extends React.Component {
           return  <SongIndexItem key={song.id} song={song} />
         });
 
-        return <div className="song-index-container">
+        return <div className="comp-index-container">
         <h3>More of what you like</h3>
         <p className="muted-text">Check out the latest sounds from your town</p>
-            <ul className="song-items-container">{songs}</ul>
+            <ul className="comp-items-container">{songs}</ul>
           </div>;
     }
 }

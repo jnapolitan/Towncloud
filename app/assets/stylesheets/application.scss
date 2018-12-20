@@ -141,15 +141,14 @@
  .container {
    width: 100%;
    position: relative;
-   height: 100vh; // for white background demo
-  //  padding-top: 50px;
+   height: 100vh; 
  }
 
  .background-white {
-   background-color: white; // for white background demo
+   background-color: white; 
  }
 
-  .main { // for white background demo
+  .main { 
     width: 1240px;
     margin: 0 auto;
     height: 100vh;
@@ -546,33 +545,36 @@
      margin: 10px 0 0 0;
    }
 
-   // SONG INDEX
+   // GENERIC COMPONENT INDEX STYLES
 
-   .song-index-container {
-      background-color: white;
-      padding: 75px 25px 25px 25px;
-      margin: 0 auto;
-      width: 1240px;
-      box-sizing: border-box;
-      height: 100vh;
+   .comp-index-container {
+     background-color: white;
+     padding: 75px 25px 25px 25px;
+     margin: 0 auto;
+     width: 1240px;
+     box-sizing: border-box;
+     height: 100vh;
    }
 
    .muted-text {
      color: gray;
    }
 
-   .song-items-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 70%;
-      border-right: 1px solid lightgray;
+   .comp-items-container {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     width: 70%;
+     border-right: 1px solid lightgray;
    }
 
-   .song-item {
-     width:180px;
+   .comp-item {
+     width: 180px;
      margin: 25px 25px 0 0;
    }
+
+
+   // SONG INDEX
 
    .song-img {
      object-fit: cover;
@@ -590,7 +592,7 @@
       height: auto;
     }
 
-    .song-item-genre {
+    .comp-item-genre {
       font-size: 12px;
       color: gray;
     }
@@ -849,4 +851,14 @@
 
     progress::-webkit-progress-value {
       background-color: #FF5500;
+    }
+
+    // USER INDEX
+
+    .artist-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 0;
     }

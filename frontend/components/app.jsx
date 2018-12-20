@@ -6,6 +6,7 @@ import EditSongFormContainer from './songs/edit_song_form_container';
 import SongIndexContainer from './songs/song_index_container';
 import SongShowContainer from './songs/song_show_container';
 import PlaybarContainer from './playbar/playbar_container';
+import UserIndexContainer from './users/user_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, HashRouter, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -26,6 +27,7 @@ const App = ({ store }) => (
             <ProtectedRoute path="/songs/:songId" component={SongShowContainer} />
             <ProtectedRoute path="/upload" component={NewSongFormContainer} />
             <ProtectedRoute path="/songs" component={SongIndexContainer} /> 
+            <ProtectedRoute path="/users" component={UserIndexContainer} />
           </Switch>
           <ProtectedRoute path="/" component={PlaybarContainer} />
         </div>
