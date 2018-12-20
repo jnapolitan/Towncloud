@@ -857,6 +857,7 @@
        color: #FF5500;
        height: 3px;
        width: 100%;
+       cursor: pointer;
     }
     progress[value]::-webkit-progress-bar {
       background-color: lightgray;
@@ -898,6 +899,18 @@
 
     .ad-banner-parent{
       width: 30%;
+    }
+
+    // SEARCH
+
+    .navbar-search {
+      position: relative;
+    }
+
+    .search-results {
+      position: absolute;
+      top: 50px;
+      left: 0%;
     }
 
 
