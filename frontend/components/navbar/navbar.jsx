@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export default class Navbar extends React.Component {
 
   render() {
+    const { currentUser, logout } = this.props;
     return <div className="navbar">
       <div className="navbar-content">
         <ul className="navbar-left">
@@ -17,8 +18,8 @@ export default class Navbar extends React.Component {
         </div>
         <ul className="navbar-right">
           <li><Link to="/upload"><button>Upload</button></Link></li>
-          <li><button onClick={this.props.logout}>Logout</button></li>
-          <li><button className="user">{this.props.currentUser.username}</button></li>
+          <li><button onClick={logout}>Logout</button></li>
+          <li><Link to={`/users/${currentUser.id}`}><button className="user">{currentUser.username}</button></Link></li>
         </ul>
       </div>
     </div>
