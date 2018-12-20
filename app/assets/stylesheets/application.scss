@@ -757,6 +757,11 @@
      box-sizing: border-box;
    }
 
+   .song-show-body {
+     display: flex;
+     justify-content: space-around;
+   }
+
    // PLAYBAR
 
    .playbar-container {
@@ -877,6 +882,22 @@
     .user-show-avatar {
       height: 250px;
       width: 250px;
+    }
+
+    .ad-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    .ad-banner img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .ad-banner-parent{
+      width: 30%;
     }
 
 

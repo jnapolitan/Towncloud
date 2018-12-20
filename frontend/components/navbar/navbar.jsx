@@ -9,7 +9,6 @@ export default class Navbar extends React.Component {
       <div className="navbar-content">
         <ul className="navbar-left">
           <a href="/#/songs"><li className="navbar-logo" /></a>
-          <a href="/#/songs" className="text"><li>Home</li></a>
           <a href="/#/songs" className="text"><li>Stream</li></a>
           <a href="/#/users" className="text"><li>Community</li></a>
         </ul>

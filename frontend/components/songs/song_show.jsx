@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import AdBanner from '../ads/ad_banner';
 
 export default class SongShow extends React.Component {
     constructor(props) {
@@ -77,31 +78,35 @@ export default class SongShow extends React.Component {
                 </form>
                 <div>
                     <h3><span className="song-show-text">{song.title}</span></h3>
-                        <p><span className="song-show-text">{users[song.userId].username}</span></p>
+                    <p><span className="song-show-text">{users[song.userId].username}</span></p>
                 </div>
             </div>
             <div className="waveform-img" />
             <img className="song-show-img" src={song.imageUrl} />
           </div>
-          <div className="song-show-details">
-            
-          <form className="comment-bar">
-            <img className="comment-img" src="https://leveldanceproject.com/wp-content/uploads/2017/07/BlankProfilePic.png" />
-            <input type="text" placeholder="Write a comment"/>
-          </form>
-          {this.userActions()}
-          <div className="song-details">
-            <div className="song-user">
-                <Link to={`/users/${song.userId}`}>
-                    <img src={users[song.userId].avatarUrl} className="song-user-avatar" />
-                </Link>
-                <Link to={`/users/${song.userId}`}>
-                    <p className="song-user-text">{users[song.userId].username}</p>
-                </Link>        
+          <div className="song-show-body">
+            <div className="song-show-details">
+                <form className="comment-bar">
+                    <img className="comment-img" src="https://leveldanceproject.com/wp-content/uploads/2017/07/BlankProfilePic.png" />
+                    <input type="text" placeholder="Write a comment"/>
+                </form>
+                {this.userActions()}
+                <div className="song-details">
+                    <div className="song-user">
+                        <Link to={`/users/${song.userId}`}>
+                            <img src={users[song.userId].avatarUrl} className="song-user-avatar" />
+                        </Link>
+                        <Link to={`/users/${song.userId}`}>
+                            <p className="song-user-text">{users[song.userId].username}</p>
+                        </Link>        
+                    </div>
+                    <p className="song-desc">{song.description}</p>
+                </div>
             </div>
-            <p className="song-desc">{song.description}</p>
+            <div className="ad-banner-parent">
+                <AdBanner />
+            </div>
           </div>
-            </div>
         </div>;
     }
 }

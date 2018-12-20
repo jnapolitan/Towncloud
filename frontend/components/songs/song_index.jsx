@@ -1,5 +1,6 @@
 import React from 'react';
 import SongIndexItem from './song_index_item';
+import AdBanner from '../ads/ad_banner';
 
 export default class SongIndex extends React.Component {
     componentDidMount() {
@@ -17,9 +18,16 @@ export default class SongIndex extends React.Component {
         });
 
         return <div className="comp-index-container">
-        <h3>More of what you like</h3>
-        <p className="muted-text">Check out the latest sounds from your town</p>
-            <ul className="comp-items-container">{songs}</ul>
+            <h3>More of what you like</h3>
+            <p className="muted-text">
+              Check out the latest sounds from your town and beyond
+            </p>
+            <div className="song-show-body">
+              <ul className="comp-items-container">{songs}</ul>
+              <div className="ad-banner-parent">
+                <AdBanner />
+              </div>
+            </div>
           </div>;
     }
 }

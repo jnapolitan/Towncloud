@@ -1,5 +1,6 @@
 import React from 'react';
 import UserIndexItem from './user_index_item';
+import AdBanner from '../ads/ad_banner';
 
 export default class UserIndex extends React.Component {
     componentDidMount() {
@@ -14,7 +15,12 @@ export default class UserIndex extends React.Component {
         return <div className="comp-index-container">
         <h3>Trending now</h3>
         <p className="muted-text">Check out some of the newest artists on TownCloud</p>
-            <ul className="comp-items-container">{users}</ul>
+            <div className="song-show-body">
+                <ul className="comp-items-container">{users}</ul>
+                <div className="ad-banner-parent">
+                    <AdBanner />
+                </div>
+            </div>
           </div>;
     }
 }
