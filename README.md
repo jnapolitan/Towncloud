@@ -37,6 +37,8 @@ ui:
 
 ### Search
 
+![global search](https://github.com/jnapolitan/Towncloud/blob/master/app/assets/images/global-search.gif "Global Search")
+
 #### The goal:
 
 Add the ability for users to search for artists and songs as their browsing the site.
