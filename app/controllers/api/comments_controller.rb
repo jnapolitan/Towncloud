@@ -4,11 +4,16 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         @comment.song_id = Song.find(params[:song_id])
-        render json: @comment.errors.full_messages
+        if @comment.save
+            render json: @comment
+        else
+            render json: @comment.errors.full_messages
+        end
     end
 
     def destroy
         @comment = Comment.find(params[:id])
+        render json: @comment
     end
 
     private
