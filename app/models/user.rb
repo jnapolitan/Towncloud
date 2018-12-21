@@ -8,6 +8,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     has_many :songs
+    has_many :comments
     has_one_attached :avatar
 
     def self.find_by_credentials(username, password)

@@ -7,6 +7,7 @@ class Song < ApplicationRecord
     has_one_attached :audio
 
     belongs_to :user
+    has_many :comments
 
     def ensure_image
         unless self.image.attached?
