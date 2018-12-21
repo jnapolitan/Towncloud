@@ -136,6 +136,13 @@
    outline: none;
  }
 
+ button {
+   background: none;
+   border: none;
+   padding: none;
+   width: 100%
+ }
+
  /* SPLASH */
 
  .container {
@@ -941,6 +948,11 @@
 
     p.search-result-text {
       color: white;
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
     }
 
 

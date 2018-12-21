@@ -7,7 +7,11 @@ export default class SearchResults extends React.Component {
     renderUsers() {
         if (this.props.users.length > 0) {
             const users = this.props.users.map(user => {
-                return <UserSearchItem key={user.id} user={user} />;
+                return <UserSearchItem 
+                    key={user.id} 
+                    user={user} 
+                    clearQuery={this.props.clearQuery}
+                />;
             });
 
             return <div className="search-section">
@@ -20,7 +24,11 @@ export default class SearchResults extends React.Component {
     renderSongs() {
         if (this.props.songs.length > 0) {
             const songs = this.props.songs.map(song => {
-                return <SongSearchItem key={song.id} song={song} />;
+                return <SongSearchItem 
+                    key={song.id} 
+                    song={song} 
+                    clearQuery={this.props.clearQuery}
+                    />;
             });
 
             return <div className="search-section">

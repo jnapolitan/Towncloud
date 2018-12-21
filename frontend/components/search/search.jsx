@@ -9,15 +9,13 @@ export default class Search extends React.Component {
             userResults: [],
             songResults: []
         };
+        this.clearQuery = this.clearQuery.bind(this)
     }
 
     componentDidMount() {
         if (this.props.users.length < 2) this.props.fetchAllUsers();
         if (this.props.songs.length < 2) this.props.fetchAllSongs();
-    }
-
-    componentDidUpdate() {
-        
+        this.searchResults = document.getElementById('search-results');
     }
 
     updateResults() {
@@ -33,6 +31,10 @@ export default class Search extends React.Component {
                 songResults: []
             });
         } else {
+            if (this.searchResults) {
+                this.searchResults.classList.remove('hidden');
+            }
+
             let userResults = [];
             let songResults = [];
 
@@ -61,11 +63,22 @@ export default class Search extends React.Component {
         });
     }
 
+    clearQuery() {
+        this.setState({query: ''});
+        if (this.searchResults) {
+            this.searchResults.classList.add('hidden');
+        }
+    }
+
     render() {
         return <div className="navbar-search">
                 <input type="text" placeholder="Search" value={this.state.query} onChange={e => this.handleQuery(e)} />
-                <div className="search-results">
-                    <SearchResults users={this.state.userResults} songs={this.state.songResults} />
+                <div id="search-results" className="search-results">
+                    <SearchResults 
+                        users={this.state.userResults} 
+                        songs={this.state.songResults} 
+                        clearQuery={this.clearQuery}
+                    />
                 </div>
             </div>;
     }
