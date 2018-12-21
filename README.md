@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the readme for [TownCloud](http://towncloud.herokuapp.com), a community for music creators inspired by SoundCloud. Read on to learn more about the approach, the technologies used, and a couple highlighted features.
 
 Things you may want to cover:
 
