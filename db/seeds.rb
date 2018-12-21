@@ -171,4 +171,123 @@ ActiveRecord::Base.transaction do
     s12.audio.attach(io: s12_audio, filename: '12.mp3')
     s12.save!
 
+    s13 = Song.new(
+    user_id: u12.id, 
+    title: "So What",
+    genre: "Jazz",
+    description: "Bitches Brew is a studio double album by American jazz musician Miles Davis, released on March 30, 1970, on Columbia Records. It continued his experimentation with electric instruments previously featured on his critically acclaimed album In a Silent Way."
+    )
+    s13_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/13.png')
+    s13_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/13.mp3')
+    s13.image.attach(io: s13_image, filename: '13.png')
+    s13.audio.attach(io: s13_audio, filename: '13.mp3')
+    s13.save!
+
+    s14 = Song.new(
+    user_id: u10.id, 
+    title: "Suit and Tie (feat. Jay Z)",
+    genre: "Jazz",
+    description: "Suit and Tie is a song by American singer-songwriter Justin Timberlake from his third studio album The 20/20 Experience (2013)."
+    )
+    s14_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/14.png')
+    s14_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/14.mp3')
+    s14.image.attach(io: s14_image, filename: '14.png')
+    s14.audio.attach(io: s14_audio, filename: '14.mp3')
+    s14.save!
+
+    s15 = Song.new(
+    user_id: u9.id, 
+    title: "Systematic (feat. Nas)",
+    genre: "Hip Hop",
+    description: "Joshua Paul Davis (born June 29, 1972),[1][2] better known by his stage name DJ Shadow, is an American record producer and DJ. He first gained notice with the release of his highly acclaimed debut studio album, Endtroducing...... He has a personal record collection of over 60,000 records."
+    )
+    s15_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/15.png')
+    s15_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/15.mp3')
+    s15.image.attach(io: s15_image, filename: '15.png')
+    s15.audio.attach(io: s15_audio, filename: '15.mp3')
+    s15.save!
+
+    s16 = Song.new(
+    user_id: u7.id, 
+    title: "Pon de Floor",
+    genre: "Electronic",
+    description: "Pon de Floor is a song by Major Lazer, a collaborative musical project consisting of the American DJ Diplo and the British DJ Switch. The single was released in 2009 by Mad Decent and Downtown Records as the second single from Major Lazer's first studio album, Guns Don't Kill People... Lazers Do (2009)."
+    )
+    s16_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/16.png')
+    s16_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/16.mp3')
+    s16.image.attach(io: s16_image, filename: '16.png')
+    s16.audio.attach(io: s16_audio, filename: '16.mp3')
+    s16.save!
+
+    s17 = Song.new(
+    user_id: u8.id, 
+    title: "D.A.N.C.E.",
+    genre: "Electronic",
+    description: "Cross (also known as † or Justice)[1] is the debut studio album by French electronic music duo Justice. It was first released on 18 June 2007 through Ed Banger Records and Because Music in most countries and Vice Records in the United States."
+    )
+    s17_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/17.png')
+    s17_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/17.mp3')
+    s17.image.attach(io: s17_image, filename: '17.png')
+    s17.audio.attach(io: s17_audio, filename: '17.mp3')
+    s17.save!
+
+    s18 = Song.new(
+    user_id: u5.id, 
+    title: "Black Tongue",
+    genre: "Rock",
+    description: "Yeah Yeah Yeahs is an American indie rock band formed in New York City in 2000. The group is composed of vocalist and pianist Karen O, guitarist and keyboardist Nick Zinner, and drummer Brian Chase."
+    )
+    s18_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/18.png')
+    s18_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/18.mp3')
+    s18.image.attach(io: s18_image, filename: '18.png')
+    s18.audio.attach(io: s18_audio, filename: '18.mp3')
+    s18.save!
+
+    s19 = Song.new(
+    user_id: u4.id, 
+    title: "Oh My Darling (Don't Cry)",
+    genre: "Hip Hop",
+    description: "Run the Jewels, also known by the initialism RTJ, is an American hip hop supergroup duo consisting of rapper/producer El-P and rapper Killer Mike."
+    )
+    s19_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/19.png')
+    s19_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/19.mp3')
+    s19.image.attach(io: s19_image, filename: '19.png')
+    s19.audio.attach(io: s19_audio, filename: '19.mp3')
+    s19.save!
+
+    s20 = Song.new(
+    user_id: u11.id, 
+    title: "St. Stephen",
+    genre: "Rock",
+    description: "Saint Stephen is first mentioned in Acts of the Apostles as one of seven deacons appointed by the Apostles to distribute food and charitable aid to poorer members of the community in the early church. According to Orthodox belief, he was the eldest and is therefore called archdeacon."
+    )
+    s20_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/20.png')
+    s20_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/20.mp3')
+    s20.image.attach(io: s20_image, filename: '20.png')
+    s20.audio.attach(io: s20_audio, filename: '20.mp3')
+    s20.save!
+
+    s21 = Song.new(
+    user_id: u6.id, 
+    title: "I Bet You Look Good on the Dancefloor",
+    genre: "Rock",
+    description: "Arctic Monkeys are an English rock band formed in 2102 in High Green, a suburb of Sheffield. The band consists of Alex Turner (lead vocals, guitar, piano), Matt Helders (drums, vocals), Jamie Cook (guitar, keyboards) and Nick O'Malley (bass guitar, backing vocals)."
+    )
+    s21_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/21.png')
+    s21_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/21.mp3')
+    s21.image.attach(io: s21_image, filename: '21.png')
+    s21.audio.attach(io: s21_audio, filename: '21.mp3')
+    s21.save!
+
+    s22 = Song.new(
+    user_id: u3.id, 
+    title: "Harder Better Faster Stronger (Remix)",
+    genre: "Electronic",
+    description: "Dillon Hart Francis (born October 5, 1987) is an American electronic musician, producer, and DJ. He is known for popularizing the moombahton genre."
+    )
+    s22_image = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/22.png')
+    s22_audio = open('https://s3-us-west-1.amazonaws.com/towndcloud-seed/22.mp3')
+    s22.image.attach(io: s22_image, filename: '22.png')
+    s22.audio.attach(io: s22_audio, filename: '22.mp3')
+    s22.save!
 end

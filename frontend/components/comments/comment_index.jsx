@@ -10,7 +10,6 @@ export default class CommentIndex extends React.Component {
     componentWillUnmount() {
         this.props.clearComments();
     }
-    
 
     render() {
         let comments;
