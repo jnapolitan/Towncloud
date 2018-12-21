@@ -73,7 +73,7 @@ export default class SongShow extends React.Component {
         return <div className="comp-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-                <form onSubmit={this.handleClick}>
+                <form onSubmit={this.handleClick} className="play-pause-button">
                     <input type="submit" id="play" className={this.buttonClass()} value="" />
                 </form>
                 <div>

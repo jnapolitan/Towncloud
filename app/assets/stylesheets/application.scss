@@ -908,6 +908,38 @@
       width: 30%;
     }
 
+    .user-songs {
+      padding: 50px;
+    }
+
+    .user-song-list {
+      list-style: none;
+    }
+
+    .user-song-img img {
+      width: 75px;
+      height: 75px;
+      padding: 25px;
+    }
+
+    .user-song-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-song-header {
+      color: #FF5500;
+      border-bottom: 1px solid #FF5500;
+    }
+
+    .play-pause-button {
+      padding: 15px;
+    }
+
+    .user-song-title {
+      color: black;
+    }
+
     // SEARCH
 
     .navbar-search {

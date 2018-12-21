@@ -1,5 +1,5 @@
 import React from 'react';
-import UserSongItem from './user_song_item';
+import UserSongItemContainer from './user_song_item_container';
 
 export default class UserShow extends React.Component {
     componentDidMount() {
@@ -16,7 +16,7 @@ export default class UserShow extends React.Component {
         let userSongs;
         if (this.props.userSongs) {
             userSongs = this.props.userSongs.map(userSong => {
-                return <UserSongItem key={userSong.id} song={userSong} />
+                return <UserSongItemContainer key={userSong.id} song={userSong} />
             });
         }
         return (
@@ -30,8 +30,9 @@ export default class UserShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <ul>
+                <div className="user-songs">
+                <h2 className="user-song-header">Songs</h2>
+                    <ul className="user-song-list">
                         {userSongs}
                     </ul>
                 </div>
