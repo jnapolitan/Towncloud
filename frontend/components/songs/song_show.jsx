@@ -72,7 +72,10 @@ export default class SongShow extends React.Component {
 
     handleCommentSubmit(e) {
         e.preventDefault();
-        this.props.createComment(this.state, this.props.match.params.songId);
+        if (this.state.body !== '') {
+            this.props.createComment(this.state, this.props.match.params.songId)
+                .then(() => this.setState({ body: "" }));
+        }   
     }
 
     updateCommentInput() {
@@ -111,7 +114,7 @@ export default class SongShow extends React.Component {
                         type="text" 
                         placeholder="Write a comment" 
                         onChange={this.updateCommentInput()} 
-                        value={this.state.userComment} 
+                        value={this.state.body} 
                     />
                 </form>
                 {this.userActions()}
@@ -124,9 +127,12 @@ export default class SongShow extends React.Component {
                             <p className="song-user-text">{users[song.userId].username}</p>
                         </Link>        
                     </div>
-                    <p className="song-desc">{song.description}</p>
+                    <div>
+                        <p className="song-desc">{song.description}</p>
+                        <CommentIndexContainer songId={this.props.match.params.songId} />
+                    </div>
                 </div>
-                <CommentIndexContainer songId={this.props.match.params.songId} />
+                
             </div>
             <div className="ad-banner-parent">
                 <AdBanner />

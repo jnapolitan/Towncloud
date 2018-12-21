@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentIndexItem from './comment_index_item';
+import CommentIndexItemContainer from './comment_index_item_container';
 
 export default class CommentIndex extends React.Component {
 
@@ -16,13 +16,21 @@ export default class CommentIndex extends React.Component {
         let comments;
         if (this.props.comments) {
             comments = this.props.comments.map(comment => {
-                return <CommentIndexItem key={comment.id} comment={comment} deleteComment={this.props.deleteComment} />
+                return <CommentIndexItemContainer
+                    key={comment.id} 
+                    comment={comment} 
+                    deleteComment={this.props.deleteComment}
+                    />
             });
         }
         return (
-            <ul>
-                { comments }
+            <>
+            
+            <ul className="comment-index">
+                <h4>Latest comments:</h4>
+                { comments.reverse() }
             </ul>
+            </>
         )
         
     }

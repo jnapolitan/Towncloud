@@ -1,7 +1,18 @@
 import React from 'react';
 
-const CommentIndexItem = props => (
-    <li>{props.comment.body}</li>
-)
+export default class CommentIndexItem extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-export default CommentIndexItem;
+    render() {
+        const { commentUser, comment } = this.props;
+        return (
+            <li className="comment-index-item">
+                <img src={commentUser.avatarUrl} className="comment-user-img" />
+                <p>{comment.body}</p>
+            </li>
+        )
+        
+    }
+}

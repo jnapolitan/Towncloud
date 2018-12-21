@@ -7,3 +7,12 @@ export const userSongsSelector = (user, state) => {
     });
     return userSongs;
 };
+
+export const commentUserSelector = (comment, state) => {
+    let commentUser;
+    Object.values(state.entities.users).forEach(user => {
+        if (user.id === comment.userId)
+            commentUser = user;
+    });
+    return commentUser;
+};

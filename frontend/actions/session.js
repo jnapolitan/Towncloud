@@ -39,7 +39,7 @@ export const fetchAllUsers = () => dispatch => SessionAPIUtil.fetchAllUsers()
     .then(users => (dispatch(receiveAllUsers(users))));
 
 export const fetchUser = (id) => dispatch => SessionAPIUtil.fetchUser(id)
-    .then(user => (dispatch(receiveUser(user))));
+    .then(user => dispatch(receiveUser(user)), err => dispatch(receiveErrors(err)) );
 
 export const createUser = (user) => dispatch => SessionAPIUtil.createUser(user)
     .then(user => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err)));

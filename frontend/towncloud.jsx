@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // TESTING 
     window.store = store.getState();
-    window.dispatch = store.dispatch;
-    //
 
     ReactDOM.render(<App store={store} />, root)
 });
