@@ -1,3 +1,10 @@
+export const fetchSongComments = (songId) => (
+    $.ajax ({
+        method: 'GET',
+        url: `api/songs/${songId}/comments`
+    })
+);
+
 export const createComment = (songId) => (
     $.ajax({
         method: 'POST',

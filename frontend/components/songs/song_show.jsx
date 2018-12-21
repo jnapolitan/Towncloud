@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import AdBanner from '../ads/ad_banner';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.handlePlayPause = this.handlePlayPause.bind(this);
     }
 
     componentDidMount() {
         const { users, song } = this.props;
         if (Object.keys(users).length < 3) this.props.fetchAllUsers();
         if (!song) this.props.fetchSong(this.props.match.params.songId);
+        // this.props.fetchSongComments(this.props.match.params.songId);
     }
 
     componentDidUpdate() {
@@ -59,7 +61,7 @@ export default class SongShow extends React.Component {
         }
     }
 
-    handleClick(e) {
+    handlePlayPause(e) {
         e.preventDefault();
         this.props.receivePlayerSong(this.props.song)
     }
@@ -73,7 +75,7 @@ export default class SongShow extends React.Component {
         return <div className="comp-show-container">
         <div className="song-show-contents">
             <div className="song-show-left">
-                <form onSubmit={this.handleClick} className="play-pause-button">
+                <form onSubmit={this.handlePlayPause} className="play-pause-button">
                     <input type="submit" id="play" className={this.buttonClass()} value="" />
                 </form>
                 <div>
@@ -104,6 +106,7 @@ export default class SongShow extends React.Component {
                     </div>
                     <p className="song-desc">{song.description}</p>
                 </div>
+                <CommentIndexContainer songId={this.props.match.params.songId} />
             </div>
             <div className="ad-banner-parent">
                 <AdBanner />
