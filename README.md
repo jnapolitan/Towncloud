@@ -14,6 +14,8 @@ Welcome to the readme for [TownCloud](http://towncloud.herokuapp.com), a communi
 
 ### Global music playbar
 
+![global playbar](https://github.com/jnapolitan/Towncloud/blob/master/app/assets/images/global-playbar.gif "Global Playbar")
+
 #### The goal: 
 
 Add the ability for users to play songs continuously while browsing the site. Allow globally synced play/pause functionality from the playbar, the song's page, and on other pages where the song appears.
