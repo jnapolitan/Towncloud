@@ -1,7 +1,8 @@
 import {
     RECEIVE_SONG_COMMENTS,
     RECEIVE_COMMENT,
-    REMOVE_COMMENT
+    REMOVE_COMMENT,
+    CLEAR_COMMENTS
 } from '../actions/comment_actions';
 
 export default (state = {}, action) => {
@@ -16,6 +17,8 @@ export default (state = {}, action) => {
             let nextState = Object.assign({}, state);
             delete nextState[action.commentId];
             return nextState;
+        case CLEAR_COMMENTS:
+            return {};
         default:
             return state;
     }

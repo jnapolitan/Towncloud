@@ -3,6 +3,7 @@ import * as CommentAPIUtil from '../util/comment_util';
 export const RECEIVE_SONG_COMMENTS = 'RECEIVE_SONG_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const CLEAR_COMMENTS = 'CLEAR_COMMENTS';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const CLEAR_COMMENT_ERRORS = 'CLEAR_COMMENT_ERRORS';
 
@@ -21,6 +22,10 @@ const removeComment = commentId => ({
     commentId
 });
 
+export const clearComments = () => ({
+    type: CLEAR_COMMENTS
+});
+
 const receiveCommentErrors = err => ({
     type: RECEIVE_COMMENT_ERRORS,
     err
@@ -33,7 +38,7 @@ export const clearCommentErrors = () => ({
 export const fetchSongComments = songId => dispatch => CommentAPIUtil.fetchSongComments(songId)
     .then(comments => dispatch(receiveSongComments(comments)), err => dispatch(receiveCommentErrors(err)));
 
-export const createComment = comment => dispatch => CommentAPIUtil.createComment(comment)
+export const createComment = (comment, songId) => dispatch => CommentAPIUtil.createComment(comment, songId)
     .then(comment => dispatch(receiveComment(comment)), err => dispatch(receiveCommentErrors(err)));
 
 export const deleteComment = commentId => dispatch => CommentAPIUtil.deleteComment(commentId)

@@ -7,6 +7,11 @@ export default class CommentIndex extends React.Component {
         if (this.props.comments.length === 0) this.props.fetchSongComments(this.props.songId);
     }
 
+    componentWillUnmount() {
+        this.props.clearComments();
+    }
+    
+
     render() {
         let comments;
         if (this.props.comments) {

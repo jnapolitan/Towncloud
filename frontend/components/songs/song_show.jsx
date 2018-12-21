@@ -6,14 +6,18 @@ import CommentIndexContainer from '../comments/comment_index_container';
 export default class SongShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            song_id: this.props.match.params.songId,
+            body: ''
+        };
         this.handlePlayPause = this.handlePlayPause.bind(this);
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
     }
 
     componentDidMount() {
         const { users, song } = this.props;
         if (Object.keys(users).length < 3) this.props.fetchAllUsers();
         if (!song) this.props.fetchSong(this.props.match.params.songId);
-        // this.props.fetchSongComments(this.props.match.params.songId);
     }
 
     componentDidUpdate() {
@@ -66,6 +70,17 @@ export default class SongShow extends React.Component {
         this.props.receivePlayerSong(this.props.song)
     }
 
+    handleCommentSubmit(e) {
+        e.preventDefault();
+        this.props.createComment(this.state, this.props.match.params.songId);
+    }
+
+    updateCommentInput() {
+        return e => {
+            this.setState({body: e.target.value})
+        }
+    }
+
     render() {
         const { song, users } = this.props;
         if (!song || Object.keys(users).length < 2) {
@@ -90,9 +105,14 @@ export default class SongShow extends React.Component {
           </div>
           <div className="song-show-body">
             <div className="song-show-details">
-                <form className="comment-bar">
+                <form className="comment-bar" onSubmit={this.handleCommentSubmit}>
                     <img className="comment-img" src="https://leveldanceproject.com/wp-content/uploads/2017/07/BlankProfilePic.png" />
-                    <input type="text" placeholder="Write a comment"/>
+                    <input 
+                        type="text" 
+                        placeholder="Write a comment" 
+                        onChange={this.updateCommentInput()} 
+                        value={this.state.userComment} 
+                    />
                 </form>
                 {this.userActions()}
                 <div className="song-details">

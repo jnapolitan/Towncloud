@@ -5,10 +5,11 @@ export const fetchSongComments = (songId) => (
     })
 );
 
-export const createComment = (songId) => (
+export const createComment = (comment, songId) => (
     $.ajax({
         method: 'POST',
-        url: `api/songs/${songId}/comments`
+        url: `api/songs/${songId}/comments`,
+        data: { comment }
     })
 );
 
