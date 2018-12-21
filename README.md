@@ -16,7 +16,7 @@ Welcome to the readme for [TownCloud](http://towncloud.herokuapp.com), a communi
 
 #### The goal: 
 
-Add the ability to begin song playback from a song's page and have that song continuously play while browsing the site. Allow globally synced play/pause functionality from the playbar, the song's page, and on other pages where the song appears.
+Add the ability for users to play songs continuously while browsing the site. Allow globally synced play/pause functionality from the playbar, the song's page, and on other pages where the song appears.
 
 #### The solution: 
 
@@ -33,26 +33,12 @@ ui:
 
 ```
 
+### Search
 
+#### The goal:
 
+Add the ability for users to search for artists and songs as their browsing the site.
 
+#### The solution:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Add a search bar in the global nav that utilizes regex to search through different slices of the Redux global state. Categorize results by artists and songs, which lead to their corresponding views, to satisfy whichever path is more relevant to the user.
