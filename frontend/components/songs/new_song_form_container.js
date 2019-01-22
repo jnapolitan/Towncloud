@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
         genre: 'Julianwave',
         description: '',
         imageFile: null,
-        imageUrl: 'http://icons.iconarchive.com/icons/ccard3dev/dynamic-yosemite/1024/Preview-icon.png',
+        imageUrl: 'https://s3-us-west-1.amazonaws.com/towndcloud-seed/song-upload.png',
         audioFile: null
     },
     formType: 'Upload Song',
