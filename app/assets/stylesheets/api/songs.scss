@@ -1,3 +1,275 @@
 // Place all the styles related to the api/songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.song-img {
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
+  transition: transform .2s;
+}
+
+.song-img:hover {
+  transform: scale(1.02)
+}
+
+.preview {
+  max-width: 20%;
+  height: auto;
+}
+
+// SONG SHOW
+
+.song-show-contents {
+  width: 100%;
+  padding: 20px;
+  background-image: linear-gradient(to top right, #DDE7E9, #5D8D96);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.song-show-text {
+  background-color: black;
+  padding: 5px;
+  color: white;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.song-show-img {
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+}
+
+.play-button-img {
+  height: 100px;
+  width: 100px;
+  padding-right: 30px;
+  background: image-url('play-button.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.pause-button-img {
+  height: 100px;
+  width: 100px;
+  padding-right: 30px;
+  background: image-url('pause-button.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.waveform-img {
+  // FOR DISPLAY
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 65%;
+  height: 200px;
+  background: image-url('waveform-img.png');
+  background-size: cover;
+}
+
+.song-options {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.song-options button {
+  padding: 5px 10px;
+  margin: 5px 0 0 15px;
+  ;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  color: gray;
+  font-size: 12px;
+}
+
+.song-options button:hover {
+  border: 1px solid gray;
+}
+
+.song-show-left {
+  display: flex;
+  align-items: center;
+  height: 30%;
+}
+
+.song-show-details {
+  width: 70%;
+  padding: 0 15px;
+  margin: 15px 0;
+  border-right: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+.song-details {
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.song-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.song-user-img {
+  height: 100px;
+  width: 100px;
+  background-image: url('http://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-circle-png-blank-3.png');
+  background-size: contain;
+}
+
+.song-user-avatar {
+  height: 150px;
+  width: 150px;
+}
+
+.song-user-text {
+  color: black;
+}
+
+.song-desc {
+  padding: 20px;
+}
+
+.comment-bar {
+  width: 100%;
+  background-color: lightgray;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.comment-bar img {
+  height: 30px;
+  width: 30px;
+  padding-right: 5px;
+}
+
+.comment-bar input {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.song-show-body {
+  display: flex;
+  justify-content: space-around;
+}
+
+// SONG FORM
+
+.song-form-container {
+  padding: 75px 25px 25px 25px;
+  margin: 0 auto;
+  width: 1240px;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.song-form-container h2 {
+  color: #FF5500;
+  border-bottom: 1px solid #FF5500;
+}
+
+.song-form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 25px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.song-form-columns {
+  display: flex;
+}
+
+.song-form-left {
+  width: 30%;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.song-form-left p {
+  margin: 10px 0 0 0;
+}
+
+.song-form-right {
+  width: 70%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-form-btn {
+  background-color: #FF5500;
+  color: white;
+  width: 20%;
+  padding: 5px;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.form-img-preview {
+  max-width: 100%
+}
+
+.song-form-select {
+  width: 50%;
+  height: 30px;
+  background-color: white;
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+.song-form-input {
+  width: 100%;
+  font-size: 12px;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.song-form-textbox {
+  width: 100%;
+  height: 200px;
+  font-size: 12px;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+label>p {
+  margin: 10px 0 0 0;
+}

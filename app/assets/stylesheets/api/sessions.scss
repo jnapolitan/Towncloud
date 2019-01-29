@@ -1,3 +1,148 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(242, 242, 242);
+  background-color: rgba(242, 242, 242, 0.8);
+  -webkit-animation: fadeIn 0.4s;
+  animation: fadeIn 0.4s
+}
+
+.modal-content {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% auto;
+  -webkit-animation: animateTop 0.4s;
+  animation: animateTop 0.4s
+}
+
+.close {
+  color: #111;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animateTop {
+  from {
+    margin-top: -200%
+  }
+
+  to {
+    margin-top: 5%
+  }
+}
+
+@-webkit-keyframes animateTop {
+  from {
+    margin-top: -200%
+  }
+
+  to {
+    margin-top: 5%
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* SESSION */
+
+.session-form-container {
+  max-width: 420px;
+  padding: 80px 20px;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.session-form-container p {
+  font-size: 12px;
+  color: gray;
+  margin: 20px 0;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-form-container button {
+  width: 100%;
+  background-color: #FF5500;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.session-form-container button.demo-login-btn {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.session-form-container input {
+  width: 100%;
+  font-size: 18px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form-errors {
+  list-style: none;
+  font-size: 12px;
+  color: #FF5500;
+}

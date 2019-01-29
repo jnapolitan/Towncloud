@@ -1,0 +1,44 @@
+.navbar-search {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 50px;
+  left: 0%;
+  background: #333333;
+  width: 100%;
+}
+
+.search-section {
+  padding: 5px 15px;
+}
+
+.search-header {
+  color: white;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-item:hover {
+  background-color: gray;
+}
+
+.search-img {
+  height: 40px;
+  width: 40px;
+  padding-right: 10px;
+}
+
+p.search-result-text {
+  color: white;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}

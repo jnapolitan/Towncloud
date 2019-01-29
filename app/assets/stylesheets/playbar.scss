@@ -1,0 +1,106 @@
+// PLAYBAR
+
+.playbar-container {
+  height: 50px;
+  background: #F2F2F2;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playbar-contents {
+  width: 1240px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.playbar-buttons {
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+}
+
+button#play {
+  border: none;
+  background: none;
+}
+
+.playbar-button {
+  border: none;
+  background: none;
+}
+
+.playbar-song-details {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  width: 15%;
+}
+
+.playbar-song-details img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.playbar-song-text p {
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.playbar-progress {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  padding: 0 25px;
+}
+
+.playbar-progress p {
+  width: 50px;
+  text-align: center;
+  font-size: 12px;
+}
+
+p.song-title {
+  font-size: 12px;
+  color: gray;
+}
+
+p#current-time {
+  color: #FF5500;
+}
+
+i {
+  font-size: 14px;
+}
+
+.playbar-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: lightgray;
+  color: #FF5500;
+  height: 3px;
+  width: 100%;
+  cursor: pointer;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: lightgray;
+  color: #FF5500;
+}
+
+progress::-webkit-progress-value {
+  background-color: #FF5500;
+}

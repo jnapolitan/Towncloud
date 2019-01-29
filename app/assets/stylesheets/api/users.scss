@@ -1,3 +1,68 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ // USER INDEX
+
+ .artist-item {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 25px 0;
+ }
+
+ // USER SHOW
+
+ .user-show-avatar {
+   height: 250px;
+   width: 250px;
+ }
+
+ .ad-banner {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 50px;
+ }
+
+ .ad-banner img {
+   height: 200px;
+   width: 200px;
+ }
+
+ .ad-banner-parent {
+   width: 30%;
+ }
+
+ .user-songs {
+   padding: 50px;
+ }
+
+ .user-song-list {
+   list-style: none;
+ }
+
+ .user-song-img img {
+   width: 75px;
+   height: 75px;
+   padding: 25px;
+ }
+
+ .user-song-item {
+   display: flex;
+   align-items: center;
+ }
+
+ .user-song-header {
+   color: #FF5500;
+   border-bottom: 1px solid #FF5500;
+ }
+
+ .play-pause-button {
+   padding: 15px;
+ }
+
+ .user-song-title {
+   color: black;
+ }
