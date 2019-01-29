@@ -1,4 +1,5 @@
 import React from 'react';
+// import ReactPlayer from 'react-player';
 
 export default class Playbar extends React.Component {
     constructor(props) {
@@ -141,13 +142,13 @@ export default class Playbar extends React.Component {
                   <i className="fa fa-step-forward" />
                 </button>
               </div>
-              
-                <div className="playbar-progress">
-                    <p id="current-time" />
-                        <progress value="0" max="1" className="seekbar" id="seekbar" />
-                    <p id="end-time" />
-                </div>
-           
+
+              <div className="playbar-progress">
+                <p id="current-time" />
+                <progress value="0" max="1" className="seekbar" id="seekbar" />
+                <p id="end-time" />
+              </div>
+
               {this.songDetails()}
               {this.renderSeekbar()}
             </div>
