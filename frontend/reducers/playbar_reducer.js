@@ -20,8 +20,8 @@ export default (state = defaultState, action) => {
     switch(action.type) {
         case RECEIVE_PLAYER_SONG:
             const { currentSong, isPlaying } = state;
-            if (!currentSong) {
-                const audio = document.getElementById("playbar-audio");
+            const audio = document.getElementById("playbar-audio");
+            if (!currentSong || (currentSong && currentSong !== action.song)) {
                 audio.setAttribute('src', action.song.audioUrl);
                 audio.play();
                 return Object.assign(
@@ -33,20 +33,7 @@ export default (state = defaultState, action) => {
                         songDuration: 0,
                         seekTime: 0
                     });
-            } else if (currentSong && currentSong !== action.song) {
-                const audio = document.getElementById("playbar-audio");
-                audio.setAttribute('src', action.song.audioUrl);
-                audio.play();
-                return Object.assign({},
-                    state, {
-                        currentSong: action.song,
-                        isPlaying: true,
-                        currentTime: 0,
-                        songDuration: 0,
-                        seekTime: 0
-                    });
             } else if (currentSong && currentSong === action.song) {
-                const audio = document.getElementById("playbar-audio");
                 if (isPlaying) {
                     audio.pause();
                     return Object.assign({},
