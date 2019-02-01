@@ -46,3 +46,44 @@ Add the ability for users to search for artists and songs as their browsing the 
 #### The solution:
 
 Add a search bar in the global nav that utilizes regex to search through different slices of the Redux global state. Categorize results by artists and songs, which lead to their corresponding views, to satisfy whichever path is more relevant to the user.
+
+```javascript
+updateResults() {
+        const { users, songs } = this.props;
+        if (!users || !songs) return;
+
+        const regex = this.state.query.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+        const regexQuery = new RegExp(regex, 'gi');
+
+        if (this.state.query.length < 2) {
+            this.setState({
+                userResults: [],
+                songResults: []
+            });
+        } else {
+            if (this.searchResults) {
+                this.searchResults.classList.remove('hidden');
+            }
+
+            let userResults = [];
+            let songResults = [];
+
+            users.forEach(user => {
+                if (user.username.match(regexQuery)) {
+                    userResults.push(user);
+                }
+            });
+
+            songs.forEach(song => {
+                if (song.title.match(regexQuery)) {
+                    songResults.push(song);
+                }
+            });
+
+            this.setState({
+                userResults: userResults,
+                songResults: songResults
+            });
+        }
+    }
+```
